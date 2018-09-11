@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.nfc.Tag;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -20,7 +20,9 @@ public class MainFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        System.out.print(1);
+        if(container!=null){
+            container = null;
+        }
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_main,container,true);
 
 //        Button button = (Button)rootView.findViewById(R.id.button);
