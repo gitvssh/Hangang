@@ -5,27 +5,150 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
+    // 프로그램 이미지
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/p_01"/>
+        android:layout_height="0dp"
+        android:background="@drawable/p_01"
+        android:scaleType="centerInside"
+        android:layout_margin="10dp"
+        android:layout_weight="1"/>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="한강수상놀이터"/>
-    
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="카누, 카약, 패들보드, 오리보트, 미니터크보트, 튜브스터 등"/>
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="2"
+        android:layout_margin="10dp">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="| 일시 |"
-        android:textColor="#083869"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="▶"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+
+        // 프로그램 레이아웃
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            // 프로그램 제목
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="한강수상놀이터"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"/>
+
+            // 프로그램 내용
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="카누, 카약, 패들보드, 오리보트, 미니터크보트, 튜브스터 등"
+                android:textSize="16dp"
+                android:textColor="#6e6e70"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="| 일시 |"
+                android:textSize="16dp"
+                android:textColor="#083869"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="7.20(금)~8.19(일) 10:00~22:00(무동력은 19:00까지)"
+                android:textSize="16dp"
+                android:textColor="#000000"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="| 장소 |"
+                android:textSize="16dp"
+                android:textColor="#083869"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="여의도한강공원 파라다이스 인근 수상"
+                android:textSize="16dp"
+                android:textColor="#000000"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="| 참여방법 |"
+                    android:textSize="16dp"
+                    android:textColor="#083869"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_gravity="left"/>
+
+                // 사이트 바로가기 이미지 버튼
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:background="#0066b3"
+                    android:text="사이트 바로가기"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:layout_gravity="center|right"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="현장접수, 사전예약(070-7372-0482)"
+                android:textSize="16dp"
+                android:textColor="#000000"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="| 참가비용 |"
+                android:textSize="16dp"
+                android:textColor="#083869"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1만원~3만원(일부프로그램 초보강습비 별도, 프로그램 내용 참조)"
+                android:textSize="16dp"
+                android:textColor="#000000"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 
