@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mainFragment = new MainFragment();
-        searchFragment = new SearchFragment();
+       /* searchFragment = new SearchFragment();*/
 
         android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
