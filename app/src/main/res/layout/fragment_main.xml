@@ -10,14 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
-        <ImageView
+        <include
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:contentDescription="@string/image"
-            android:textDirection="firstStrong"
-            android:src="@drawable/main01"
-            android:layout_gravity="center_horizontal"
-            android:scaleType="fitXY"
+            android:layout_height="wrap_content"
+            layout="@layout/fragment_image"
             />
         <TextView
             android:layout_width="match_parent"
