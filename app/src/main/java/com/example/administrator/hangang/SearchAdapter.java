@@ -14,6 +14,12 @@ import java.util.ArrayList;
 public class SearchAdapter extends BaseAdapter {
     ArrayList<Search> items = new ArrayList<Search>();
 
+    Context context ;
+
+    public SearchAdapter(Context context) {
+        this.context = context;
+    }
+
     @Override
     public int getCount() {
         return items.size();
@@ -45,7 +51,7 @@ public class SearchAdapter extends BaseAdapter {
     }
 
     private Context context() {
-        return context();
+        return this.context;
     }
 
 

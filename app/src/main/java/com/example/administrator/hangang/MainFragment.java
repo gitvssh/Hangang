@@ -40,7 +40,7 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
                 System.out.print(3);
                 MainActivity activity = (MainActivity)getActivity();
-                activity.onFragmentChanged(0);
+                //activity.onFragmentChanged(0);
             }
         });
         return rootView;

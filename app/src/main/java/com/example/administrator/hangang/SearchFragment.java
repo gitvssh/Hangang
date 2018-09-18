@@ -20,7 +20,7 @@ public class SearchFragment extends Fragment{
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_search,container,false);
         listview = (ListView) rootView.findViewById(R.id.s_listview);
 
-        adapter = new SearchAdapter();
+        adapter = new SearchAdapter(getContext());
         adapter.addItem((new Search("한강몽땅", "재밌어요~",R.drawable.seoulinkifestival01)));
         adapter.addItem((new Search("한강몽땅", "재밌어요~",R.drawable.seoulinkifestival01)));
         adapter.addItem((new Search("한강몽땅", "재밌어요~",R.drawable.seoulinkifestival01)));
