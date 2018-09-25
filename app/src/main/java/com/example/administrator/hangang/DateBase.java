@@ -45,7 +45,7 @@ public class DateBase {
 
         db.execSQL("insert into hanGang(_id, title, content, date, place, participate, fee) values('3_k', '한강몽땅 종이배경주대회', " +
                 "'직접 만든 종이배를 타고 한강 위의 반환점을 돌아오는 경주대회', '8.10(금)~8.12(일) 09:00~16:30'" +
-                "'잠실한강공원 내 잠실나들목 앞 둔치', '사전예약, 현장접수', '50,000원(배 1대 제작 기준)');");
+                "'잠실한강공원 내 잠실나들목 앞 둔치', '사전예약, 현장접수', '50,000원jjj(배 1대 제작 기준)');");
 
         db.execSQL("insert into hanGang(_id, title, content, date, place, participate, fee) values('4_k', '', " +
                 "'', ''" +
