@@ -1,5 +1,6 @@
 package com.example.administrator.hangang;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -9,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
@@ -20,6 +22,8 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
+    private ImageButton imageButton;
+
     private DrawerLayout drawerLayout;
     private ActionBar actionBar;
     private ConvenientBanner convenientBanner;
@@ -41,6 +45,20 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setTitle("");
         RollPagerView mRollViewPager = (RollPagerView)findViewById(R.id.rollpagerview);
         mRollViewPager.setAdapter(new TestLoopAdapter(mRollViewPager));
+
+
+        //화면이동 테스트
+        imageButton= findViewById(R.id.MainButton1);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
+                //TODO:인텐트에 검색조건 넣어야함
+                startActivity(intent);
+            }
+        });
     }
 
 

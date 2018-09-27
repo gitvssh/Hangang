@@ -11,13 +11,9 @@ import android.view.MenuItem;
 
 public class map extends AppCompatActivity{
 
-
     MapsActivity mapsActivity;
     DrawerLayout drawerLayout;
     ActionBar actionBar;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +32,6 @@ public class map extends AppCompatActivity{
         actionBar.setHomeAsUpIndicator(R.mipmap.baseline_dehaze_white_18dp);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("");
-
 
     }
 
