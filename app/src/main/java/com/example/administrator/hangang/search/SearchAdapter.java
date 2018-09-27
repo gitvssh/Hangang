@@ -1,4 +1,4 @@
-package com.example.administrator.hangang;
+package com.example.administrator.hangang.search;
 
 import android.content.Context;
 import android.view.View;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 /**
  * Created by rohyj on 2018-09-11.
  */
-
+//리스트형태로 보여주기 위한 어댑터클래스
 public class SearchAdapter extends BaseAdapter {
     ArrayList<Search> items = new ArrayList<Search>();
 
