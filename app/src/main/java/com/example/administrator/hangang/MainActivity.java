@@ -14,10 +14,9 @@ import android.view.MenuItem;
 
 
 public class MainActivity extends AppCompatActivity {
-    ImageFragment imageFragment;
-    MainFragment mainFragment;
 
-    Fragment searchFragment;
+
+
     DrawerLayout drawerLayout;
     ActionBar actionBar;
 
@@ -27,47 +26,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mainFragment = new MainFragment();
-        imageFragment = new ImageFragment();
-       /* searchFragment = new SearchFragment();*/
-
-        android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
-
-        /*
-        FragmentTransaction fragmentTransaction = fm.beginTransaction();
-        fragmentTransaction.add(R.id.imageFragment,imageFragment);
-        fragmentTransaction.add(R.id.mainFragment, mainFragment);
-        fragmentTransaction.commit();
-        actionBar = getSupportActionBar();
-        drawerLayout = (DrawerLayout) findViewById(R.id.draw_layout) ;
-        actionBar.setHomeAsUpIndicator(R.mipmap.baseline_dehaze_white_18dp);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle("");
-        */
-        FragmentTransaction fragmentTransaction = fm.beginTransaction();
-        //fragmentTransaction.add(R.id.mainFragment, mainFragment);
-        fragmentTransaction.add(R.id.imageFragment,imageFragment);
-
-        fragmentTransaction.commit();
         actionBar = getSupportActionBar();
         drawerLayout = (DrawerLayout) findViewById(R.id.draw_layout) ;
         actionBar.setHomeAsUpIndicator(R.mipmap.baseline_dehaze_white_18dp);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("");
 
-        //getSupportFragmentManager().beginTransaction().replace(R.id.mainFragment,mainFragment).commit();
+
 
     }
 
-    /*
-    public void onFragmentChanged(int index){
-        if(index==0){
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainFragment,searchFragment).commit();
-        }else if(index==1){
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainFragment,mainFragment).commit();
-        }
-    }
-    */
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);

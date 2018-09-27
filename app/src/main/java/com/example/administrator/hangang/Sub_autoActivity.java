@@ -2,6 +2,9 @@ package com.example.administrator.hangang;
 
 import android.graphics.drawable.Animatable;
 import android.os.Bundle;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,7 +29,8 @@ import me.relex.photodraweeview.PhotoDraweeView;
 
 
 public class Sub_autoActivity extends AppCompatActivity {
-
+    private DrawerLayout drawerLayout;
+    private ActionBar actionBar;
     private ConvenientBanner convenientBanner;
 
     private ArrayList<String> images = new ArrayList<>();
@@ -39,7 +43,11 @@ public class Sub_autoActivity extends AppCompatActivity {
         //loadTestDatas();
 
 
-
+        actionBar = getSupportActionBar();
+        drawerLayout = (DrawerLayout) findViewById(R.id.draw_layout) ;
+        actionBar.setHomeAsUpIndicator(R.mipmap.baseline_dehaze_white_18dp);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setTitle("");
         RollPagerView mRollViewPager = (RollPagerView)findViewById(R.id.rollpagerview);
         mRollViewPager.setAdapter(new TestLoopAdapter(mRollViewPager));
     }
@@ -92,6 +100,13 @@ public class Sub_autoActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        if (id == android.R.id.home){
+            if(!drawerLayout.isDrawerOpen(GravityCompat.START)){
+                drawerLayout.openDrawer(GravityCompat.START);
+            }else{
+                drawerLayout.closeDrawer(GravityCompat.START);
+            }
+        }
 
         return super.onOptionsItemSelected(item);
     }
