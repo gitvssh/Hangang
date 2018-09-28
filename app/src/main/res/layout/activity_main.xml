@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
-<!--
+
 
    <android.support.v4.widget.DrawerLayout
         android:id="@+id/draw_layout"
@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
         tools:openDrawer="start">
--->
+
 
 
     <LinearLayout
@@ -24,23 +24,41 @@
         android:background="@drawable/backgroundimg"
         android:orientation="vertical">
 
+        <RelativeLayout
+            android:layout_width="360dp"
+            android:layout_height="210dp">
 
-        <com.jude.rollviewpager.RollPagerView
-            android:id="@+id/rollpagerview"
-            android:layout_width="340dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"
-            app:rollviewpager_play_delay="3000" />
+
+            <com.jude.rollviewpager.RollPagerView
+                android:id="@+id/rollpagerview"
+                android:layout_width="360dp"
+                android:layout_height="210dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                app:rollviewpager_play_delay="3000" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="340dp"
+                android:layout_height="210dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/mainfont" />
+
+
+
+
+        </RelativeLayout>
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:text="@string/notice"
             android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/notice"
             android:textColor="#ffffff" />
 
         <LinearLayout
@@ -123,11 +141,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:layout_marginLeft="12dp"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:textColor="#ffffff"
-            android:text="@string/today" />
+            android:text="@string/today"
+            android:textColor="#ffffff" />
 
         <TableLayout
             android:layout_width="wrap_content"
@@ -228,10 +246,10 @@
 
         </android.support.design.widget.NavigationView>
 
-<!--
+
 
     </android.support.v4.widget.DrawerLayout>
--->
+
 
 
 
