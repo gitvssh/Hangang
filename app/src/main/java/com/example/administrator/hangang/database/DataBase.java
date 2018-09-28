@@ -1,9 +1,9 @@
-package com.example.administrator.hangang;
+package com.example.administrator.hangang.database;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
 
-import static com.example.administrator.hangang.DataBase.CreateDB.CREATE;
+import static com.example.administrator.hangang.database.DataBase.CreateDB.CREATE;
 
 public class DataBase {
 

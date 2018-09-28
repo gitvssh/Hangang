@@ -1,4 +1,4 @@
-package com.example.administrator.hangang;
+package com.example.administrator.hangang.database;
 
 import android.content.Context;
 import android.database.SQLException;
