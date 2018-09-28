@@ -1,6 +1,7 @@
 package com.example.administrator.hangang.database;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -29,21 +30,21 @@ public class DbOpenHelper {
             db.execSQL(DataBase.CreateDB.CREATE);
             //TODO : 최초생성시 프로그램 정보 입력SQL 여기다 넣어야함
 
-            db.execSQL("insert into hanGang(id, title, content, date, place, participate, fee) values('1', '한강수상놀이터'," +
+            db.execSQL("insert into hanGang(_id, title, content, date, place, participate, fee) values('1', '한강수상놀이터'," +
                     " '카약, 카누, 패들보드, 수상자전거, 오리보트', '7.20(금)~8.19(일) 10:00~22:00(무동력은 19:00까지)', " +
                     "'여의도한강공원 파라다이스 인근 수상', '현장접수, 사전예약', " +
                     "'1만원~3만원(일부프로그램 초보강습비 별도, 프로그램 내용 참조)');");
 
-            db.execSQL("insert into hanGang(id, title, content, date, place, participate, fee) values('2', '한강물싸움축제', " +
+            db.execSQL("insert into hanGang(_id, title, content, date, place, participate, fee) values('2', '한강물싸움축제', " +
                     "'한강몽땅 대표 프로그램으로 더위를 시원하게 날려버리는 물싸움 대전', '8.4(토)~8.5(일) 11:00~18:00'," +
                     "'난지한강공원 젊음의광장', '사전예약, 현장접수', '1만1천원 (7세 이하 무료입장)');");
 
-            db.execSQL("insert into hanGang(id, title, content, date, place, participate, fee) values('3', '한강몽땅 종이배경주대회', " +
+            db.execSQL("insert into hanGang(_id, title, content, date, place, participate, fee) values('3', '한강몽땅 종이배경주대회', " +
                     "'직접 만든 종이배를 타고 한강 위의 반환점을 돌아오는 경주대회', '8.10(금)~8.12(일) 09:00~16:30'," +
                     "'잠실한강공원 내 잠실나들목 앞 둔치', '사전예약, 현장접수', '50,000원jjj(배 1대 제작 기준)');");
             db.execSQL("insert into hanGang(_id, title, content, date, place, participate, fee) values('4', '한강자전거한바퀴'," +
                 "'한강의 대자연을 체험할 수 있는 자전거 축제', '8.15(수) 08:00~14:00', " +
-                "'여의도한강공원 이벤트광장', '모바일앱 사전예약(자전거네비게이션 '오픈라이더' 모바일앱)', " +
+                "'여의도한강공원 이벤트광장', '모바일앱 사전예약(자전거네비게이션 오픈라이더 모바일앱)', " +
                 "'1만원');");
 
             db.execSQL("insert into hanGang(_id, title, content, date, place, participate, fee) values('5', '2018 한강크로스스위밍챌린지'," +
@@ -131,12 +132,12 @@ public class DbOpenHelper {
                     "'10,000 won');");
 
             db.execSQL("insert into hanGang(_id, title, content, date, place, participate, fee) values('21', '2018 Hangang Cross Swimming Challenge'," +
-                    "'Let's swim across the Hangang River!', '09:00-17:00, August 19', " +
+                    "'Lets swim across the Hangang River!', '09:00-17:00, August 19', " +
                     "'The dammed pool at the Southern end of Jamsildaegyo Bridge', 'Reservation', " +
                     "'40,000 won');");
 
             db.execSQL("insert into hanGang(_id, title, content, date, place, participate, fee) values('22', 'Hangang Fire Dancing Festival'," +
-                    "'A performance by the world's best fire dancing artist and fireworks', '17:00-22:00, July 28-29', " +
+                    "'A performance by the worlds best fire dancing artist and fireworks', '17:00-22:00, July 28-29', " +
                     "'Around the Yebit Stage at Banpo Hangang Park', 'First come first served', " +
                     "'free of charge');");
 
@@ -171,12 +172,12 @@ public class DbOpenHelper {
                     "'40,000 won for 42km, 35,000 won for 25km, 30,000 won for 15km');");
 
             db.execSQL("insert into hanGang(_id, title, content, date, place, participate, fee) values('29', 'Hangang Summer Green School'," +
-                    "'Let's spend the hot summer experiencing nature!', '10:00-21:30, July 20-August 19', " +
+                    "'Lets spend the hot summer experiencing nature!', '10:00-21:30, July 20-August 19', " +
                     "'Nanji, Ichon, Jamwon, Ttukseom, Jamsil, Gwangnaru, etc.', 'Reservation', " +
                     "'free of charge');");
 
             db.execSQL("insert into hanGang(_id, title, content, date, place, participate, fee) values('30', 'Hangang Summer Campground'," +
-                    "'Enjoy the summer night at the city's riverside!', '15:00-11:00, July 13-August 26', " +
+                    "'Enjoy the summer night at the citys riverside!', '15:00-11:00, July 13-August 26', " +
                     "'Yeouido and Ttukseom Hangang Park', 'Reservation', " +
                     "'15,000-25,000 won (rental fees for camping supplies not included)');");
 
@@ -367,7 +368,7 @@ public class DbOpenHelper {
 
             db.execSQL("insert into hanGang(_id, title, content, date, place, participate, fee) values('68', '漢江自行車兜風'," +
                     "'騎著自行車涼爽地統漢江一週', '8.15(三)08:00~14:00', " +
-                    "'汝矣島漢江公園(出發地)', '透過手機APP\「open rider」提前預約', " +
+                    "'汝矣島漢江公園(出發地)', '透過手機APP「open rider」提前預約', " +
                     "'1萬韓元');");
 
             db.execSQL("insert into hanGang(_id, title, content, date, place, participate, fee) values('69', '2018 橫渡漢江大挑戰'," +
@@ -450,6 +451,13 @@ public class DbOpenHelper {
         mDBHelper = new DatabaseHelper(mCtx, DATABASE_NAME, null, DATABASE_VERSION);
         mDB = mDBHelper.getWritableDatabase();
         return this;
+    }
+
+    //인덱스값 받아와서 db 조회해서 커서(쿼리결과) 넘겨줌
+    public Cursor executeRawQuery(int index){
+        Cursor cursor=mDB.rawQuery("select * from hangang where _id="+index+";",null);
+
+        return cursor;
     }
 
     public void close(){

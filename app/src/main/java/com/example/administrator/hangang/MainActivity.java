@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         mDbOpenHelper = new DbOpenHelper(this);
         mDbOpenHelper.open();
 
+
         //화면이동 테스트
         imageButton= findViewById(R.id.MainButton1);
 
@@ -65,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
                 //TODO:인텐트에 검색조건 넣어야함
+                int[] index={1,2};
+                intent.putExtra("index",index);
                 startActivity(intent);
             }
         });

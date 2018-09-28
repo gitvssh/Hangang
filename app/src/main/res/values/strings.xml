@@ -12,5 +12,8 @@
     <string name="han3">한강 다리밑영화제</string>
     <string name="han4">한강 데이트</string>
 
+    <string name="s_title">sample_title</string>
+    <string name="s_content">sample_content</string>
+
 
 </resources>

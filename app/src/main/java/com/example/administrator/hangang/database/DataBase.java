@@ -9,7 +9,7 @@ public class DataBase {
 
     public static final class CreateDB implements BaseColumns {
         public static final String TABLENAME = "hangang";
-        public static final String CREATE = "create table hangang(id integer primary key,title text,content text,date text,place text ,participate text,fee text);";
+        public static final String CREATE = "create table hangang(_id integer primary key,title text,content text,date text,place text ,participate text,fee text);";
 
     }
 

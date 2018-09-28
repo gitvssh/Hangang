@@ -23,7 +23,7 @@
             android:id="@+id/s_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
+            android:text="@string/s_title"
             android:textSize="20dp"
             android:textStyle="bold"
             android:paddingLeft="10dp"
@@ -34,7 +34,7 @@
             android:id="@+id/s_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text ="New Text"
+            android:text ="@string/s_content"
             android:textSize="10dp"
             android:paddingLeft="10dp"
 

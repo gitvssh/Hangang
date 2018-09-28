@@ -1,18 +1,29 @@
 package com.example.administrator.hangang;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.example.administrator.hangang.database.DbOpenHelper;
 import com.example.administrator.hangang.search.Search;
 import com.example.administrator.hangang.search.SearchAdapter;
 
 public class SearchActivity extends AppCompatActivity {
     ListView listview;
     SearchAdapter adapter;
+
+    //db변수 선언
+    private DbOpenHelper mDbOpenHelper;
+    private Cursor mCursor;
+
+    //db에서 읽어온 값 저장할 변수
+    String title,content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +32,32 @@ public class SearchActivity extends AppCompatActivity {
 
         listview = (ListView) findViewById(R.id.s_listview);
 
+        //db create and open
+        mDbOpenHelper = new DbOpenHelper(this);
+        mDbOpenHelper.open();
+
         adapter = new SearchAdapter(getApplicationContext());
 
-        //TODO: 여기에 인텐트로 받아온 인덱스로 SQL쿼리 날려서 어댑터에 프로그램 정보 등록해야함
-        adapter.addItem((new Search("한강몽땅", "재밌어요~",R.drawable.seoulinkifestival01)));
-        adapter.addItem((new Search("한강몽땅", "재밌어요~",R.drawable.seoulinkifestival01)));
-        adapter.addItem((new Search("한강몽땅", "재밌어요~",R.drawable.seoulinkifestival01)));
+
+        Intent intent=getIntent();
+        int[] index=intent.getIntArrayExtra("index");
+
+
+        for(int i=0;i<index.length;i++){
+            mCursor=mDbOpenHelper.executeRawQuery(index[i]);
+            if(mCursor!=null&&mCursor.moveToFirst()) {
+                title = mCursor.getString(1);
+                content=mCursor.getString(2);
+                mCursor.close();
+            }
+            //TODO:이미지 처리 알고리즘
+            adapter.addItem((new Search(title,content,R.drawable.seoulinkifestival01,index[i])));
+        }
+
+
+        adapter.addItem((new Search("영어샘플", "재밌어요~",R.drawable.seoulinkifestival01,28)));
+        adapter.addItem((new Search("일어샘플", "재밌어요~",R.drawable.seoulinkifestival01,34)));
+        adapter.addItem((new Search("중어샘플", "재밌어요~",R.drawable.seoulinkifestival01,50)));
 
 
         listview.setAdapter(adapter);
@@ -35,8 +66,12 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Search item = (Search) adapter.getItem(position);
-                //TODO: 선택된 리스트의 인덱스 인텐트로 전달해서 상세 프로그램으로 화면 이동
+
+                int index = item.getIndex();//해당 아이템의 인덱스 가져옴
+
                 Intent intent = new Intent(getApplicationContext(),ProgramActivity.class);
+                intent.putExtra("index",index);//인텐트에 해당 프로그램의 db인덱스 전달
+
                 startActivity(intent);
             }
         });
