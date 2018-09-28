@@ -38,8 +38,6 @@ public class Sub_autoActivity extends AppCompatActivity {
         setContentView(R.layout.sub_auto_main);
         //loadTestDatas();
 
-
-
         RollPagerView mRollViewPager = (RollPagerView)findViewById(R.id.rollpagerview);
         mRollViewPager.setAdapter(new TestLoopAdapter(mRollViewPager));
     }

@@ -1,15 +1,20 @@
 package com.example.administrator.hangang;
 
-import android.app.Activity;
-import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Bundle;
+import android.provider.BaseColumns;
 
-public class DateBase {
+import static com.example.administrator.hangang.DataBase.CreateDB.CREATE;
+
+public class DataBase {
 
     boolean databaseCreated;
     boolean tableCreated;
 
+    public static final class CreateDB implements BaseColumns {
+        public static final String TABLENAME = "hangang";
+        public static final String CREATE = "create table hangang(_id text PRIMARY KEY,title text,content text,date text,place text ,participate text,fee text);";
+
+    }
     SQLiteDatabase db;
 
     private void createDatabase(String name){
@@ -19,14 +24,7 @@ public class DateBase {
     }
 
     private void createTable(String name){
-        db.execSQL("create table hanGang("
-                + "_id text PRIMARY KEY autoincrement,"
-                + "title text, "
-                + "content text, "
-                + "date text, "
-                + "place text, "
-                + "participate text, "
-                + "fee text);" );
+        db.execSQL(CREATE);
 
         tableCreated = true;
     }
