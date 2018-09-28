@@ -1,5 +1,6 @@
-package com.example.administrator.hangang;
+package com.example.administrator.hangang.search;
 
+//어댑터에서 사용하는 한 아이템에 필요한 데이터를 다루는 객체
 public class Search {
     String title;
     String content;

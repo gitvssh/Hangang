@@ -1,73 +1,105 @@
 package com.example.administrator.hangang;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.os.Bundle;
-import android.view.Gravity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+
+import com.bigkoo.convenientbanner.ConvenientBanner;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.jude.rollviewpager.RollPagerView;
+import com.jude.rollviewpager.adapter.LoopPagerAdapter;
+
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
-    ImageFragment imageFragment;
-    MainFragment mainFragment;
+    private ImageButton imageButton;
 
-    Fragment searchFragment;
-    DrawerLayout drawerLayout;
-    ActionBar actionBar;
+    private DrawerLayout drawerLayout;
+    private ActionBar actionBar;
+    private ConvenientBanner convenientBanner;
 
-
+    private ArrayList<String> images = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Fresco.initialize(getApplicationContext());
         setContentView(R.layout.activity_main);
+        //loadTestDatas();
 
-        mainFragment = new MainFragment();
-        imageFragment = new ImageFragment();
-       /* searchFragment = new SearchFragment();*/
 
-        android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
-
-        /*
-        FragmentTransaction fragmentTransaction = fm.beginTransaction();
-        fragmentTransaction.add(R.id.imageFragment,imageFragment);
-        fragmentTransaction.add(R.id.mainFragment, mainFragment);
-        fragmentTransaction.commit();
         actionBar = getSupportActionBar();
         drawerLayout = (DrawerLayout) findViewById(R.id.draw_layout) ;
         actionBar.setHomeAsUpIndicator(R.mipmap.baseline_dehaze_white_18dp);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("");
-        */
-        FragmentTransaction fragmentTransaction = fm.beginTransaction();
-        //fragmentTransaction.add(R.id.mainFragment, mainFragment);
-        fragmentTransaction.add(R.id.imageFragment,imageFragment);
+        RollPagerView mRollViewPager = (RollPagerView)findViewById(R.id.rollpagerview);
+        mRollViewPager.setAdapter(new TestLoopAdapter(mRollViewPager));
 
-        fragmentTransaction.commit();
-        actionBar = getSupportActionBar();
-        drawerLayout = (DrawerLayout) findViewById(R.id.draw_layout) ;
-        actionBar.setHomeAsUpIndicator(R.mipmap.baseline_dehaze_white_18dp);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle("");
 
-        //getSupportFragmentManager().beginTransaction().replace(R.id.mainFragment,mainFragment).commit();
+        //화면이동 테스트
+        imageButton= findViewById(R.id.MainButton1);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
+                //TODO:인텐트에 검색조건 넣어야함
+                startActivity(intent);
+            }
+        });
+    }
+
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
 
     }
 
-    /*
-    public void onFragmentChanged(int index){
-        if(index==0){
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainFragment,searchFragment).commit();
-        }else if(index==1){
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainFragment,mainFragment).commit();
+
+    private class TestLoopAdapter extends LoopPagerAdapter {
+        private int[] imgs = {
+                R.drawable.mainimgslide1,
+                R.drawable.mainimgslide2,
+                R.drawable.mainimgslide3,
+                R.drawable.mainimgslide4,
+                R.drawable.mainimgslide5,
+                R.drawable.mainimgslide6,
+
+        };
+
+        public TestLoopAdapter(RollPagerView viewPager) {
+            super(viewPager);
+        }
+
+        @Override
+        public View getView(ViewGroup container, int position) {
+            ImageView view = new ImageView(container.getContext());
+            view.setImageResource(imgs[position]);
+            view.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+            return view;
+        }
+
+        @Override
+        public int getRealCount() {
+            return imgs.length;
         }
     }
-    */
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);

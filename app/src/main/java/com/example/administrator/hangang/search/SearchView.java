@@ -1,4 +1,4 @@
-package com.example.administrator.hangang;
+package com.example.administrator.hangang.search;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.administrator.hangang.R;
+//어댑터에서 사용하는 1개 아이템 뷰 인플레이터
 public class SearchView extends LinearLayout{
     TextView textView;
     TextView textView2;

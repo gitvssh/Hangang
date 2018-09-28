@@ -42,3 +42,6 @@ dependencies {
     api 'com.jude:rollviewpager:1.4.6'
 }
 
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:+'
+}
