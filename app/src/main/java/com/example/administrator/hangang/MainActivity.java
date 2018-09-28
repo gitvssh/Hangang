@@ -1,6 +1,7 @@
 package com.example.administrator.hangang;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -14,6 +15,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
+import com.example.administrator.hangang.database.DbOpenHelper;
+import com.example.administrator.hangang.database.Program;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.LoopPagerAdapter;
@@ -26,9 +29,12 @@ public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private ActionBar actionBar;
-    private ConvenientBanner convenientBanner;
 
-    private ArrayList<String> images = new ArrayList<>();
+    //db변수 선언
+    private DbOpenHelper mDbOpenHelper;
+    private Cursor mCursor;
+    private Program mProgram;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
         RollPagerView mRollViewPager = (RollPagerView)findViewById(R.id.rollpagerview);
         mRollViewPager.setAdapter(new TestLoopAdapter(mRollViewPager));
 
+        //db create and open
+        mDbOpenHelper = new DbOpenHelper(this);
+        mDbOpenHelper.open();
 
         //화면이동 테스트
         imageButton= findViewById(R.id.MainButton1);
