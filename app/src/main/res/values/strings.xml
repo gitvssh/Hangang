@@ -2,11 +2,15 @@
     <string name="app_name">Hangang</string>
 
     <string name="image">한강몽땅1</string>
-    <string name="notice">공지사항\n2018.08.15 한강그림놀이페스티벌 운영시간</string>
+    <string name="notice">테마별 프로그램</string>
     <string name="btn1">시원한강\n프로그램</string>
     <string name="btn2">감동한강\n프로그램</string>
     <string name="btn3">자연한강\n프로그램</string>
-    <string name="today">#오늘의 행사</string>
+    <string name="today">오늘의 행사</string>
+    <string name="han1">서울밤도깨비야시장</string>
+    <string name="han2">한강 패들보드(SUP)체험</string>
+    <string name="han3">한강 다리밑영화제</string>
+    <string name="han4">한강 데이트</string>
 
 
 </resources>
