@@ -13,10 +13,7 @@
         android:fitsSystemWindows="true"
         tools:openDrawer="start">
 
-    <ScrollView
-        android:id="@+id/ScrollViewSearchHangang"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
 
         <LinearLayout
@@ -26,7 +23,7 @@
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="500dp"
                 >
 
             <ImageView
@@ -51,7 +48,7 @@
 
         </LinearLayout>
 
-    </ScrollView>
+
     <android.support.design.widget.NavigationView
         android:id="@+id/naviView"
         android:layout_width="250dp"
