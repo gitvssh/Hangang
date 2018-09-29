@@ -19,7 +19,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:textStyle="bold"
-        android:textSize="20dp"/>
+        android:textSize="25dp"/>
 
 
     <ImageView
@@ -47,104 +47,118 @@
             android:layout_height="wrap_content"
             android:text="‘한강몽땅’이 있어 즐거운 ‘한강의 여름’!"
             android:textStyle="bold"
-            android:textSize="16dp"/>
+            android:textSize="25dp"
+            android:lineSpacingExtra="10dp"/>
 
     <TextView
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="한강몽땅이란?"
         android:textStyle="bold"
-        android:textSize="16dp"/>
+        android:textSize="25dp"
+        android:lineSpacingExtra="10dp"/>
 
     <TextView
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="2013년 시작되어 서울을 대표하는 여름축제로 자리매김한 ‘한강몽땅’은 한여름 한강이 줄 수 있는 행복을 시민들에게 몽땅 선사한다는 의미를 담고 있습니다. ‘한강몽땅’은 시민과 예술가, 민간기업, 지자체가 함께 어우러져 만들어가는 플랫폼형 도시문화축제입니다. 물놀이, 영화, 공연, 서커스, 생태체험, 요트, 자전거, 먹거리 등 여름 한강에서 누릴 수 있고 상상할 수 있는 모든 프로그램을 만날 수 있습니다."
-        android:textSize="16dp"/>
+        android:textSize="20dp"
+        android:lineSpacingExtra="10dp"/>
 
     <TextView
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="31일간 진행되는 국내최대규모의 여름축제"
         android:textStyle="bold"
-        android:textSize="16dp"/>
+        android:textSize="25dp"
+        android:lineSpacingExtra="10dp"/>
 
     <TextView
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="7월 20일부터 8월 19일까지 31일이라는 국내 도시축제 중에 최장의 축제기간을 가진 한강몽땅은 11개 한강공원과 한강수상 전체를 축제장으로 사용하는 국내 최대의 여름축제입니다. 이 기간동안 한강은 1천만 시민의 문화피서지이자 예술놀이터로 바뀝니다."
-        android:textSize="16dp"/>
+        android:textSize="20dp"
+        android:lineSpacingExtra="10dp"/>
 
     <TextView
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="3개 테마 80여개 프로그램"
         android:textStyle="bold"
-        android:textSize="16dp"/>
+        android:textSize="25dp"
+        android:lineSpacingExtra="10dp"/>
 
             <TextView
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="한강몽땅의 80여개 프로그램은 시민들이 쉽게 선택할 수 있도록 ‘시원한강’, ‘감동한강’, ‘함께한강’의 세가지 큰 테마로 묶여졌습니다."
-                android:textSize="16dp"/>
-
-            <TextView
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="- 한강을 횡단하는 수영대회와 ‘한강수상놀이터’ 등 수상레포츠와 다양한 경연 프로그램들을 묶은 ‘시원한강’"
-                android:textSize="16dp"/>
-
-            <TextView
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="- 한강 거리아티스트들이 함께하는 ‘버스킹 페스티벌’, 물속에 잠겨 영화를 감상하는 ‘시네마 퐁당’ 등 공연과 영화, 새로운 예술체험 프로그램들을 묶은 ‘감동한강’"
-                android:textSize="16dp"/>
-
-            <TextView
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="- 한강의 자연을 만끽할 수 있는 ‘한강몽땅 여름생태학교’ 등 자연속에서의 휴식과 캠핑, 여유로운 한강투어 프로그램들과 함께하는 ‘함께한강’"
-                android:textSize="16dp"/>
+                android:textSize="20dp"
+                android:lineSpacingExtra="10dp"/>
 
             <TextView
                 android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- 한강을 횡단하는 수영대회와 ‘한강수상놀이터’ 등 수상레포츠와 다양한 경연 프로그램들을 묶은 ‘시원한강’"
+                android:textSize="20dp"
+                android:lineSpacingExtra="10dp"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- 한강 거리아티스트들이 함께하는 ‘버스킹 페스티벌’, 물속에 잠겨 영화를 감상하는 ‘시네마 퐁당’ 등 공연과 영화, 새로운 예술체험 프로그램들을 묶은 ‘감동한강’"
+                android:textSize="20dp"
+                android:lineSpacingExtra="10dp"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- 한강의 자연을 만끽할 수 있는 ‘한강몽땅 여름생태학교’ 등 자연속에서의 휴식과 캠핑, 여유로운 한강투어 프로그램들과 함께하는 ‘함께한강’"
+                android:textSize="20dp"
+                android:lineSpacingExtra="10dp"/>
+
+            <TextView
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="‘한강몽땅’ 대표 프로그램"
                 android:textStyle="bold"
-                android:textSize="16dp"/>
+                android:textSize="25dp"
+                android:lineSpacingExtra="10dp"/>
 
 
             <TextView
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="서울시민을 위해 한강이 준비하는 특별한 선물 ‘한강몽땅’은 ‘종이배 경주대회’ ‘다리밑 영화제’ ‘나이트 워크 42k' ’물싸움축제‘ ’다리밑 헌책방‘, ’파이어 댄싱페스티벌‘ 과 같은 브랜드 프로그램과 함께 올해는 ’한여름 강의 예술놀이터‘라는 주제로 한강과 어울리는 예술프로그램들을 모아 한여름 잔치마당을 만듭니다. 온가족이 함께 즐기는 가족프로그램 패키지 축제인 ’별빛 소극장‘, 매년 개최해오던 서커스 프로그램의 규모를 늘리고 축제화한 ’달빛 서커스‘, 서울시 무형문화재 등 한강에서 전통의 향취를 느낄 수 있는 연희마당 등의 소축제들이 특별한 추억의 시간을 만들어 드릴 것입니다."
-                android:textSize="16dp"/>
+                android:textSize="20dp"
+                android:lineSpacingExtra="10dp"/>
 
             <TextView
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="‘한강몽땅’이 있어 즐거운 ‘한강의 여름’!"
                 android:textStyle="bold"
-                android:textSize="16dp"/>
+                android:textSize="25dp"
+                android:lineSpacingExtra="10dp"/>
 
             <TextView
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="‘한강몽땅’은 올해도 1000만 시민들과 함께 감동적인 공연과 시원한 물놀이 그리고 자연과 함께하는 가치를 알리며 시민들을 즐거운 한여름 예술놀이터를 풍성하게 채워갈 것입니다. ‘한강몽땅’의 80여개 프로그램과 함께 시원한 여름을 만끽하시길 바랍니다.!!"
-                android:textSize="16dp"/>
+                android:textSize="20dp"
+                android:lineSpacingExtra="10dp"/>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
