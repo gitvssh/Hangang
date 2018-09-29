@@ -1,6 +1,9 @@
 package com.example.administrator.hangang;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -10,7 +13,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class map extends AppCompatActivity {
+
+
+public class map extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
 
     MapsActivity mapsActivity;
@@ -41,6 +46,9 @@ public class map extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("");
 
+        NavigationView navigationView = (NavigationView) findViewById(R.id.naviView);
+        navigationView.setNavigationItemSelectedListener(this);//네비게이션뷰 리스너
+
     }
 
     @Override
@@ -63,6 +71,68 @@ public class map extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+
+        if (id == R.id.navi_home){
+
+            Intent intent=new Intent(map.this,MainActivity.class);
+            startActivity(intent);
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }
+        else if (id == R.id.navi_hangang){
+
+            Intent intent=new Intent(map.this,introduceActivity.class);
+            startActivity(intent);
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }else if (id == R.id.navi_direct){
+
+            Intent intent=new Intent(map.this,DirectionActivity.class);
+            startActivity(intent);
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }else if (id == R.id.navi_theme){
+
+            Intent intent=new Intent(map.this,ProgramActivity.class);
+            startActivity(intent);
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }else if (id == R.id.navi_date){
+
+//            Intent intent=new Intent(map.this,ProgramActivity.class);
+//            startActivity(intent);
+//            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }
+        else if (id == R.id.navi_reserv){
+
+//            Intent intent=new Intent(map.this,ProgramActivity.class);
+//            startActivity(intent);
+//            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }else if (id == R.id.navi_notice){
+
+//            Intent intent=new Intent(map.this,introduceActivity.class);
+//            startActivity(intent);
+//            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }else if (id == R.id.navi_cvs){
+
+            Intent intent=new Intent(map.this,map.class);
+            startActivity(intent);
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }
+
+
+        return false;
     }
 
     public void onButton1Clicked(View v){

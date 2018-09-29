@@ -184,7 +184,7 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback,GoogleM
         Toast.makeText(getContext(), "현재 위치를 표시합니다",Toast.LENGTH_LONG).show();
         return false;
     }
-    
+
 
     public String searchOnMap(String search,Location location,int rad){
 
