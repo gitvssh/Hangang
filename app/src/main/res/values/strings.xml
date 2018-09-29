@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Hangang</string>
 
-    <string name="image">한강몽땅1</string>
+    //MainActivity String source
     <string name="notice">테마별 프로그램</string>
     <string name="btn1">시원한강\n프로그램</string>
     <string name="btn2">감동한강\n프로그램</string>
@@ -11,7 +11,18 @@
     <string name="han2">한강 패들보드(SUP)체험</string>
     <string name="han3">한강 다리밑영화제</string>
     <string name="han4">한강 데이트</string>
+
+    //NavigationBar String source
     <string name="intro">한강몽땅이란?</string>
+
+    //ProgramActivity String source
+    <string name="prg_label_date">| 일시 |</string>
+    <string name="prg_label_place">| 장소 |</string>
+    <string name="prg_label_participate">| 참여방법 |</string>
+    <string name="prg_label_fee">| 참가비용 |</string>
+
+
+    //sample sourcce
     <string name="s_title">sample_title</string>
     <string name="s_content">sample_content</string>
     <string name="title_activity_direction">DirectionActivity</string>

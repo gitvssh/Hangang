@@ -25,6 +25,8 @@ public class ProgramActivity extends AppCompatActivity implements NavigationView
 
     ImageView prg_img;
     TextView prg_title,prg_content,prg_date,prg_place,prg_participate,prg_fee;
+    //색변경용 타이틀
+    TextView prg_label_date,prg_label_place,prg_label_participate,prg_label_fee;
 
     String title,content,date,place,participate,fee;
     FrameLayout background;
@@ -41,6 +43,8 @@ public class ProgramActivity extends AppCompatActivity implements NavigationView
         //인텐트에서 인덱스 얻기
         Intent intent=getIntent();
         int index=intent.getIntExtra("index",-1);
+
+
 
         actionBar = getSupportActionBar();  //액션바 추가
         drawerLayout = (DrawerLayout) findViewById(R.id.draw_layout) ; //네비게이션뷰를 위한 드로우레이아웃
@@ -69,6 +73,11 @@ public class ProgramActivity extends AppCompatActivity implements NavigationView
         prg_fee=findViewById(R.id.prg_fee);
         background=findViewById(R.id.prg_backgroundColorLayout);
 
+        prg_label_date=findViewById(R.id.prg_label_date);
+        prg_label_participate=findViewById(R.id.prg_label_participate);
+        prg_label_place=findViewById(R.id.prg_label_place);
+        prg_label_fee=findViewById(R.id.prg_label_fee);
+
         //쿼리문에서 컬럼값 받아와서 string값에 넣음
         if(c1!=null&&c1.moveToFirst()) {
             title = c1.getString(1);
@@ -92,14 +101,6 @@ public class ProgramActivity extends AppCompatActivity implements NavigationView
         int resID = getResources().getIdentifier(resName, "drawable", packName);
         prg_img.setBackgroundResource(resID);
 
-        if(index<6){
-            background.setBackgroundColor(R.color.siwon);
-        }else if(index<12){
-            background.setBackgroundColor(R.color.gamdong);
-        }else{
-            background.setBackgroundColor(R.color.zayeon);
-        }
-
 
         //값 설정
         prg_title.setText(title);
@@ -109,6 +110,28 @@ public class ProgramActivity extends AppCompatActivity implements NavigationView
         prg_participate.setText(participate);
         prg_fee.setText(fee);
         }
+
+        //index값에 따라 배경,글자색 설정
+        if(index<6){
+            background.setBackgroundColor(R.color.siwon);
+            prg_label_date.setTextColor(R.color.siwon);
+            prg_label_participate.setTextColor(R.color.siwon);
+            prg_label_place.setTextColor(R.color.siwon);
+            prg_label_fee.setTextColor(R.color.siwon);
+        }else if(index>=6&&index<12){
+            background.setBackgroundColor(R.color.gamdong);
+            prg_label_date.setTextColor(R.color.gamdong);
+            prg_label_participate.setTextColor(R.color.gamdong);
+            prg_label_place.setTextColor(R.color.gamdong);
+            prg_label_fee.setTextColor(R.color.gamdong);
+        }else if(index>=12&&index<=16){
+            background.setBackgroundColor(R.color.zayeon);
+            prg_label_date.setTextColor(R.color.zayeon);
+            prg_label_participate.setTextColor(R.color.zayeon);
+            prg_label_place.setTextColor(R.color.zayeon);
+            prg_label_fee.setTextColor(R.color.zayeon);
+        }
+
     }
     //액션바 메뉴 활성화
     @Override
