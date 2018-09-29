@@ -4,8 +4,6 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/prg_backgroundColorLayout"
-    android:background="#000000"
     tools:ignore="MissingDefaultResource">
 
     <android.support.v4.widget.DrawerLayout
@@ -15,195 +13,191 @@
         android:fitsSystemWindows="true"
         tools:openDrawer="start">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="30px"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:orientation="vertical"
-        android:background="@drawable/radius"
-        android:backgroundTint="#ffffffff"
-        tools:ignore="MissingDefaultResource">
-
-        // 프로그램 이미지
-
-        <ImageView
-            android:id="@+id/prg_img"
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/p_01"
-            android:scaleType="centerInside" />
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/prg_backgroundColorLayout"
+            android:background="@color/siwon"
+            tools:ignore="MissingDefaultResource">
 
-        <LinearLayout
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="10dp"
-            android:layout_weight="2"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:layout_margin="50px"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:background="@drawable/radius"
+            android:backgroundTint="#ffffffff"
+            tools:ignore="MissingDefaultResource">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="▶"
-                android:textColor="#000000"
-                android:textStyle="bold" />
+            // 프로그램 이미지
 
-            // 프로그램 레이아웃
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                // 프로그램 제목
-
-                <TextView
-                    android:id="@+id/prg_title"
+                <ImageView
+                    android:id="@+id/prg_img"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginBottom="2dp"
-                    android:text="한강수상놀이터"
-                    android:textColor="#000000"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
-
-                // 프로그램 내용
-
-                <TextView
-                    android:id="@+id/prg_content"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginBottom="2dp"
-                    android:text="카누, 카약, 패들보드, 오리보트, 미니터크보트, 튜브스터 등"
-                    android:textColor="#6e6e70"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:id="@+id/prg_label_date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginBottom="2dp"
-                    android:text="| 일시 |"
-                    android:textColor="#083869"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:id="@+id/prg_date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginBottom="5dp"
-                    android:text="7.20(금)~8.19(일) 10:00~22:00(무동력은 19:00까지)"
-                    android:textColor="#000000"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:id="@+id/prg_label_place"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginBottom="2dp"
-                    android:text="| 장소 |"
-                    android:textColor="#083869"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:id="@+id/prg_place"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginBottom="5dp"
-                    android:text="여의도한강공원 파라다이스 인근 수상"
-                    android:textColor="#000000"
-                    android:textSize="16dp" />
+                    android:layout_height="0dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/p_01"
+                    android:scaleType="centerInside" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="2"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/prg_label_participate"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginBottom="2dp"
-                        android:text="| 참여방법 |"
-                        android:textColor="#083869"
-                        android:textSize="16dp" />
+                        android:layout_height="match_parent"
+                        android:text="    "/>
 
-                    // 사이트 바로가기 이미지 버튼
+                    // 프로그램 레이아웃
 
-                    <Button
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="16dp"
-                        android:layout_gravity="center|right"
-                        android:background="#0066b3"
-                        android:text="사이트 바로가기"
-                        android:textColor="#ffffff"
-                        android:textStyle="bold" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
+                        // 프로그램 제목
+
+                        <TextView
+                            android:id="@+id/prg_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="한강수상놀이터"
+                            android:textColor="#000000"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        // 프로그램 내용
+
+                        <TextView
+                            android:id="@+id/prg_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="카누, 카약, 패들보드, 오리보트, 미니터크보트, 튜브스터 등"
+                            android:textColor="#6e6e70"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/prg_label_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="@string/prg_label_date"
+                            android:textColor="#083869"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/prg_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="7.20(금)~8.19(일) 10:00~22:00(무동력은 19:00까지)"
+                            android:textColor="#000000"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/prg_label_place"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="@string/prg_label_place"
+                            android:textColor="#083869"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/prg_place"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="여의도한강공원 파라다이스 인근 수상"
+                            android:textColor="#000000"
+                            android:textSize="16dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/prg_label_participate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:text="@string/prg_label_participate"
+                                android:textColor="#083869"
+                                android:textSize="16dp" />
+
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/prg_participate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="현장접수, 사전예약(070-7372-0482)"
+                            android:textColor="#000000"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/prg_label_fee"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="@string/prg_label_fee"
+                            android:textColor="#083869"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/prg_fee"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="1만원~3만원(일부프로그램 초보강습비 별도, 프로그램 내용 참조)"
+                            android:textColor="#000000"
+                            android:textSize="16dp" />
+
+                    </LinearLayout>
                 </LinearLayout>
-
-
-                <TextView
-                    android:id="@+id/prg_participate"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginBottom="5dp"
-                    android:text="현장접수, 사전예약(070-7372-0482)"
-                    android:textColor="#000000"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:id="@+id/prg_label_fee"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginBottom="2dp"
-                    android:text="| 참가비용 |"
-                    android:textColor="#083869"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:id="@+id/prg_fee"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginBottom="5dp"
-                    android:text="1만원~3만원(일부프로그램 초보강습비 별도, 프로그램 내용 참조)"
-                    android:textColor="#000000"
-                    android:textSize="16dp" />
-
             </LinearLayout>
+        </FrameLayout>
 
-        </LinearLayout>
+        <android.support.design.widget.NavigationView
+            android:id="@+id/naviView"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:menu="@menu/menu_drawer"
 
+            >
 
-    </LinearLayout>
-    <android.support.design.widget.NavigationView
-        android:id="@+id/naviView"
-        android:layout_width="250dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:menu="@menu/menu_drawer"
-
-        >
-
-    </android.support.design.widget.NavigationView>
+        </android.support.design.widget.NavigationView>
 
 
 
-</android.support.v4.widget.DrawerLayout>
+    </android.support.v4.widget.DrawerLayout>
 
 </FrameLayout>
