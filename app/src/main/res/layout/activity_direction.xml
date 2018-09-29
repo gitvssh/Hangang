@@ -4,10 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".DirectionActivity">
 
-
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/draw_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start">
 
 
     <ScrollView
@@ -19,10 +25,24 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="오시는 방법"
-            android:scaleType="fitXY"
             android:src="@drawable/direction" />
 
     </ScrollView>
+        <android.support.design.widget.NavigationView
+            android:id="@+id/naviView"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:menu="@menu/menu_drawer"
+
+            >
+
+        </android.support.design.widget.NavigationView>
+
+
+
+    </android.support.v4.widget.DrawerLayout>
 
 
 

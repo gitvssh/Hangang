@@ -61,11 +61,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         actionBar.setHomeAsUpIndicator(R.mipmap.baseline_dehaze_white_18dp);//홈버튼 아이콘 설정
         actionBar.setDisplayHomeAsUpEnabled(true);//홈기능 활성화
         actionBar.setTitle("");//타이틀 삭제
-        RollPagerView mRollViewPager = (RollPagerView)findViewById(R.id.rollpagerview);
-        mRollViewPager.setAdapter(new TestLoopAdapter(mRollViewPager));
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.naviView);
         navigationView.setNavigationItemSelectedListener(this);//네비게이션뷰 리스너
+
+        RollPagerView mRollViewPager = (RollPagerView)findViewById(R.id.rollpagerview);
+        mRollViewPager.setAdapter(new TestLoopAdapter(mRollViewPager));
         //db create and open
         mDbOpenHelper = new DbOpenHelper(this);
         mDbOpenHelper.open();
@@ -160,33 +160,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onResume();
 
     }
-    //사이드메뉴 메뉴선택 이벤트
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.navi_theme){
-
-            Intent intent=new Intent(MainActivity.this,ProgramActivity.class);
-            startActivity(intent);
-            drawerLayout.closeDrawer(GravityCompat.START);
-
-        }
-
-        if (id == R.id.navi_hangang){
-
-            Intent intent=new Intent(MainActivity.this,introduceActivity.class);
-            startActivity(intent);
-            drawerLayout.closeDrawer(GravityCompat.START);
-
-        }
-
-
-        return false;
-    }
-
-
-    private class TestLoopAdapter extends LoopPagerAdapter {
+       private class TestLoopAdapter extends LoopPagerAdapter {
         private int[] imgs = {
                 R.drawable.mainimgslide1,
                 R.drawable.mainimgslide2,
@@ -234,5 +208,66 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    //사이드메뉴 메뉴선택 이벤트
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+
+        if (id == R.id.navi_home){
+
+            Intent intent=new Intent(MainActivity.this,MainActivity.class);
+            startActivity(intent);
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }
+        else if (id == R.id.navi_hangang){
+
+            Intent intent=new Intent(MainActivity.this,introduceActivity.class);
+            startActivity(intent);
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }else if (id == R.id.navi_direct){
+
+            Intent intent=new Intent(MainActivity.this,DirectionActivity.class);
+            startActivity(intent);
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }else if (id == R.id.navi_theme){
+
+            Intent intent=new Intent(MainActivity.this,ProgramActivity.class);
+            startActivity(intent);
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }else if (id == R.id.navi_date){
+
+//            Intent intent=new Intent(MainActivity.this,ProgramActivity.class);
+//            startActivity(intent);
+//            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }
+        else if (id == R.id.navi_reserv){
+
+//            Intent intent=new Intent(MainActivity.this,ProgramActivity.class);
+//            startActivity(intent);
+//            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }else if (id == R.id.navi_notice){
+
+//            Intent intent=new Intent(MainActivity.this,introduceActivity.class);
+//            startActivity(intent);
+//            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }else if (id == R.id.navi_cvs){
+//TODO"편의시설 연결"
+//            Intent intent=new Intent(MainActivity.this,MapActivity.class);
+//            startActivity(intent);
+//            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }
+
+
+        return false;
     }
 }
