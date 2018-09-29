@@ -21,7 +21,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".SearchActivity" />
-        <activity android:name=".ProgramActivity"></activity>
+        <activity android:name=".ProgramActivity" />
+        <activity
+            android:name=".DirectionActivity"
+            android:label="@string/title_activity_direction" />
+        <activity android:name=".IntroActivity"></activity>
     </application>
 
 </manifest>

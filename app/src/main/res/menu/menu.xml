@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:title="홈으로"
         app:showAsAction="ifRoom"
-        android:icon="@mipmap/baseline_home_white_18dp"
-        android:id="@+id/home"/>
+        android:icon="@mipmap/baseline_search_white_18dp"
+        android:id="@+id/bar_search"
+        app:actionViewClass="android.support.v7.widget.SearchView" />
+
 </menu>

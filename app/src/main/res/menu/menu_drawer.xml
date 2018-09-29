@@ -3,18 +3,20 @@
 
 <item android:title="한강몽땅">
     <menu>
+        <item
+            android:id="@+id/navi_home"
+            android:title="홈으로"
+            android:icon="@mipmap/baseline_home_black_18dp"
+            />
     <item
         android:id="@+id/navi_hangang"
         android:title="한강몽땅 소개"
         android:icon="@mipmap/baseline_crop_original_black_18dp"/>
     <item
-        android:id="@+id/navi_sns"
-        android:title="한강몽땅SNS"
-        android:icon="@mipmap/baseline_email_black_18dp"/>
-    <item
-        android:id="@+id/navi_cvs"
-        android:title="편의시설"
-        android:icon="@mipmap/baseline_commute_black_18dp"/>
+        android:id="@+id/navi_direct"
+        android:title="오시는 길"
+        android:icon="@mipmap/baseline_map_black_18dp"/>
+
     </menu>
 </item>
 
@@ -35,16 +37,16 @@
     </menu>
 </item>
 
-<item android:title="커뮤니티">
+<item android:title="행사관련">
     <menu>
     <item
-        android:id="@+id/notice"
+        android:id="@+id/navi_notice"
         android:title="공지사항"
         android:icon="@mipmap/baseline_event_note_black_18dp"/>
     <item
-        android:id="@+id/navi_qna"
-        android:title="QnA"
-        android:icon="@mipmap/baseline_question_answer_black_18dp"/>
+        android:id="@+id/navi_cvs"
+        android:title="편의시설"
+        android:icon="@mipmap/baseline_commute_black_18dp"/>
     </menu>
 </item>
 </menu>

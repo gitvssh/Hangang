@@ -14,6 +14,7 @@
 
     <string name="s_title">sample_title</string>
     <string name="s_content">sample_content</string>
+    <string name="title_activity_direction">DirectionActivity</string>
 
 
 </resources>
