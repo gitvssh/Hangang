@@ -51,8 +51,6 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback,GoogleM
     Boolean clicked = false;
     static String aim;
 
-    static final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 100;
-    static final int MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION = 100;
     static final LatLng DEFAULT_LOCATION = new LatLng(37.56, 126.97);
     private Marker currentMarker = null;
 
@@ -63,9 +61,6 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback,GoogleM
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
 
         mapFragment.getMapAsync(this);
-
-        getPermission(Manifest.permission.ACCESS_FINE_LOCATION,MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
-        getPermission(Manifest.permission.ACCESS_COARSE_LOCATION,MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION);
 
         return rootView;
     }
@@ -190,59 +185,6 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback,GoogleM
         return false;
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-                switch (requestCode) {
-                    case MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION: {
-                        // If request is cancelled, the result arrays are empty.
-                        if (grantResults.length > 0
-                                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                            // permission was granted, yay! Do the
-                            // contacts-related task you need to do.
-
-                        } else {
-                            Toast.makeText(getActivity(),"권한 요청이 거부되었습니다.",Toast.LENGTH_LONG).show();
-                            // permission denied, boo! Disable the
-                            // functionality that depends on this permission.
-                        }
-                        return;
-                    }
-
-            // other 'case' lines to check for other
-            // permissions this app might request
-        }
-    }
-
-    public void getPermission(String permission,int request){
-        // Here, thisActivity is the current activity
-        if (ContextCompat.checkSelfPermission(getActivity(),
-                permission)
-                != PackageManager.PERMISSION_GRANTED) {
-
-            // Should we show an explanation?
-            if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
-                    permission)) {
-
-                // Show an expanation to the user *asynchronously* -- don't block
-                // this thread waiting for the user's response! After the user
-                // sees the explanation, try again to request the permission.
-
-            } else {
-
-                // No explanation needed, we can request the permission.
-
-                ActivityCompat.requestPermissions(getActivity(),
-                        new String[]{permission},
-                        request);
-
-                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
-                // app-defined int constant. The callback method gets the
-                // result of the request.
-            }
-        }
-    }
 
     public String searchOnMap(String search,Location location,int rad){
 
