@@ -260,10 +260,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //            drawerLayout.closeDrawer(GravityCompat.START);
 
         }else if (id == R.id.navi_cvs){
-//TODO"편의시설 연결"
-//            Intent intent=new Intent(MainActivity.this,MapActivity.class);
-//            startActivity(intent);
-//            drawerLayout.closeDrawer(GravityCompat.START);
+
+             Intent intent=new Intent(MainActivity.this,map.class);
+             startActivity(intent);
+             drawerLayout.closeDrawer(GravityCompat.START);
 
         }
 
