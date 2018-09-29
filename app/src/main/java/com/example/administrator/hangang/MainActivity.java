@@ -44,13 +44,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     //db변수 선언
     private DbOpenHelper mDbOpenHelper;
-    private Cursor mCursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
 
         super.onCreate(savedInstanceState);
+        //로딩화면 실행
+        startActivity(new Intent(this,LoadingActivity.class));
 
         Fresco.initialize(getApplicationContext());
         setContentView(R.layout.activity_main);
