@@ -5,18 +5,22 @@
     android:orientation="horizontal"
     >
 
-
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_height="150dp">
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/s_image"
-        android:src="@drawable/p_01"/>
+        android:src="@drawable/p_01"
+        android:scaleType="centerCrop"/>
 
+    </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-
+        android:layout_height="150dp"
+        android:layout_marginLeft="10dp"
         >
 
         <TextView
@@ -24,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/s_title"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textStyle="bold"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
@@ -35,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text ="@string/s_content"
-            android:textSize="10dp"
+            android:textSize="14dp"
             android:paddingLeft="10dp"
 
             />

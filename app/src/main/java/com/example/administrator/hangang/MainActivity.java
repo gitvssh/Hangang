@@ -1,6 +1,5 @@
 package com.example.administrator.hangang;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -17,7 +16,6 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
@@ -38,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //메인화면 프로그램 버튼들
     private ImageButton siwon,gamdong,zayeon;
     private FrameLayout today1,today2,today3,today4;
-    //액션바 및 드로우 레이아웃
+
     private DrawerLayout drawerLayout;
     private ActionBar actionBar;
 
@@ -63,11 +61,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         actionBar.setHomeAsUpIndicator(R.mipmap.baseline_dehaze_white_18dp);//홈버튼 아이콘 설정
         actionBar.setDisplayHomeAsUpEnabled(true);//홈기능 활성화
         actionBar.setTitle("");//타이틀 삭제
-        NavigationView navigationView = (NavigationView) findViewById(R.id.naviView);
-        navigationView.setNavigationItemSelectedListener(this);//네비게이션뷰 리스너
-
         RollPagerView mRollViewPager = (RollPagerView)findViewById(R.id.rollpagerview);
         mRollViewPager.setAdapter(new TestLoopAdapter(mRollViewPager));
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.naviView);
+        navigationView.setNavigationItemSelectedListener(this);//네비게이션뷰 리스너
         //db create and open
         mDbOpenHelper = new DbOpenHelper(this);
         mDbOpenHelper.open();
@@ -162,6 +160,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onResume();
 
     }
+    //사이드메뉴 메뉴선택 이벤트
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.navi_theme){
+
+            Intent intent=new Intent(MainActivity.this,ProgramActivity.class);
+            startActivity(intent);
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }
+
+        if (id == R.id.navi_hangang){
+
+            Intent intent=new Intent(MainActivity.this,introduceActivity.class);
+            startActivity(intent);
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }
+
+
+        return false;
+    }
+
 
     private class TestLoopAdapter extends LoopPagerAdapter {
         private int[] imgs = {
@@ -196,7 +219,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
     //홈버튼 네비게이션뷰 온오프
     @Override
@@ -211,39 +234,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         return super.onOptionsItemSelected(item);
-    }
-    //사이드메뉴 메뉴선택 이벤트
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.navi_home){
-
-        }else if(id == R.id.navi_hangang){
-
-        }else if(id == R.id.navi_direct){
-            Intent intent=new Intent(MainActivity.this,DirectionActivity.class);
-            startActivity(intent);
-            drawerLayout.closeDrawer(GravityCompat.START);
-        }else if (id == R.id.navi_theme){
-
-            Intent intent=new Intent(MainActivity.this,ProgramActivity.class);
-            startActivity(intent);
-            drawerLayout.closeDrawer(GravityCompat.START);
-
-        }else if(id == R.id.navi_date){
-
-        }else if(id == R.id.navi_reserv){
-
-        }else if(id == R.id.navi_notice){
-
-        }else if(id == R.id.navi_cvs){
-
-        }
-
-
-
-
-        return false;
     }
 }
