@@ -8,12 +8,18 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
-public class map extends AppCompatActivity{
+public class map extends AppCompatActivity {
+
 
     MapsActivity mapsActivity;
     DrawerLayout drawerLayout;
     ActionBar actionBar;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +29,11 @@ public class map extends AppCompatActivity{
 
         android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
         mapsActivity = new MapsActivity();
+
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
         fragmentTransaction.add(R.id.mapfragment, mapsActivity);
         fragmentTransaction.commit();
+
 
         actionBar = getSupportActionBar();
         drawerLayout = (DrawerLayout) findViewById(R.id.draw_layout) ;
@@ -42,6 +50,7 @@ public class map extends AppCompatActivity{
     }
 
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -56,8 +65,11 @@ public class map extends AppCompatActivity{
         return super.onOptionsItemSelected(item);
     }
 
-
-
-
+    public void onButton1Clicked(View v){
+        mapsActivity.addMarker("편의점");
+    }
+    public void onButton2Clicked(View v){
+        mapsActivity.addMarker("화장실");
+    }
 
 }
