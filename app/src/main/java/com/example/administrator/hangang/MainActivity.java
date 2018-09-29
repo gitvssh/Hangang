@@ -55,16 +55,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //loadTestDatas();
 
 
-        actionBar = getSupportActionBar();
-        drawerLayout = (DrawerLayout) findViewById(R.id.draw_layout) ;
-        actionBar.setHomeAsUpIndicator(R.mipmap.baseline_dehaze_white_18dp);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle("");
+        actionBar = getSupportActionBar();  //액션바 추가
+        drawerLayout = (DrawerLayout) findViewById(R.id.draw_layout) ; //네비게이션뷰를 위한 드로우레이아웃
+        actionBar.setHomeAsUpIndicator(R.mipmap.baseline_dehaze_white_18dp);//홈버튼 아이콘 설정
+        actionBar.setDisplayHomeAsUpEnabled(true);//홈기능 활성화
+        actionBar.setTitle("");//타이틀 삭제
         RollPagerView mRollViewPager = (RollPagerView)findViewById(R.id.rollpagerview);
         mRollViewPager.setAdapter(new TestLoopAdapter(mRollViewPager));
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.naviView);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(this);//네비게이션뷰 리스너
         //db create and open
         mDbOpenHelper = new DbOpenHelper(this);
         mDbOpenHelper.open();
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onResume();
 
     }
-
+    //사이드메뉴 메뉴선택 이벤트
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
@@ -207,13 +207,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             return imgs.length;
         }
     }
-
+    //액션바 메뉴 활성화
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
-
+    //홈버튼 네비게이션뷰 온오프
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
