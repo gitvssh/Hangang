@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".introduceActivity"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/intro"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        android:textSize="20dp"/>
+
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="@drawable/loading"/>
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/intro2"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="‘한강몽땅’이 있어 즐거운 ‘한강의 여름’!"
+            android:textStyle="bold"
+            android:textSize="16dp"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="한강몽땅이란?"
+        android:textStyle="bold"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2013년 시작되어 서울을 대표하는 여름축제로 자리매김한 ‘한강몽땅’은 한여름 한강이 줄 수 있는 행복을 시민들에게 몽땅 선사한다는 의미를 담고 있습니다. ‘한강몽땅’은 시민과 예술가, 민간기업, 지자체가 함께 어우러져 만들어가는 플랫폼형 도시문화축제입니다. 물놀이, 영화, 공연, 서커스, 생태체험, 요트, 자전거, 먹거리 등 여름 한강에서 누릴 수 있고 상상할 수 있는 모든 프로그램을 만날 수 있습니다."
+        android:textSize="16dp"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="31일간 진행되는 국내최대규모의 여름축제"
+        android:textStyle="bold"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="7월 20일부터 8월 19일까지 31일이라는 국내 도시축제 중에 최장의 축제기간을 가진 한강몽땅은 11개 한강공원과 한강수상 전체를 축제장으로 사용하는 국내 최대의 여름축제입니다. 이 기간동안 한강은 1천만 시민의 문화피서지이자 예술놀이터로 바뀝니다."
+        android:textSize="16dp"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3개 테마 80여개 프로그램"
+        android:textStyle="bold"
+        android:textSize="16dp"/>
+
+
+    </LinearLayout>
+</ScrollView>
+
+
+<!--
+<TextView
+android:layout_marginTop="5dp"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text=""
+ android:textSize="16dp"/>
+
+<TextView
+android:layout_marginTop="10dp"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text=""
+android:textStyle="bold"
+android:textSize="16dp"/>
+-->
