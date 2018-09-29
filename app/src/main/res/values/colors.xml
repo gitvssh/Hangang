@@ -3,4 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="siwon">#2a89c9</color>
+    <color name="gamdong">#69c1b5</color>
+    <color name="zayeon">#c3a0c8</color>
 </resources>

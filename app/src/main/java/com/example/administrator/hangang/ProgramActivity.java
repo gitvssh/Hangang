@@ -1,10 +1,12 @@
 package com.example.administrator.hangang;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,11 +16,14 @@ public class ProgramActivity extends AppCompatActivity {
 
     ImageView prg_img;
     TextView prg_title,prg_content,prg_date,prg_place,prg_participate,prg_fee;
+
     String title,content,date,place,participate,fee;
+    FrameLayout background;
 
     //db변수 선언
     private DbOpenHelper mDbOpenHelper;
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +50,7 @@ public class ProgramActivity extends AppCompatActivity {
         prg_place=findViewById(R.id.prg_place);
         prg_participate=findViewById(R.id.prg_participate);
         prg_fee=findViewById(R.id.prg_fee);
+        background=findViewById(R.id.prg_backgroundColorLayout);
 
         //쿼리문에서 컬럼값 받아와서 string값에 넣음
         if(c1!=null&&c1.moveToFirst()) {
@@ -68,6 +74,14 @@ public class ProgramActivity extends AppCompatActivity {
 
         int resID = getResources().getIdentifier(resName, "drawable", packName);
         prg_img.setBackgroundResource(resID);
+
+        if(index<6){
+            background.setBackgroundColor(R.color.siwon);
+        }else if(index<12){
+            background.setBackgroundColor(R.color.gamdong);
+        }else{
+            background.setBackgroundColor(R.color.zayeon);
+        }
 
 
         //값 설정
