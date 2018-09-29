@@ -27,13 +27,13 @@
             android:orientation="vertical">
 
             <RelativeLayout
-                android:layout_width="360dp"
+                android:layout_width="match_parent"
                 android:layout_height="210dp">
 
 
                 <com.jude.rollviewpager.RollPagerView
                     android:id="@+id/rollpagerview"
-                    android:layout_width="360dp"
+                    android:layout_width="match_parent"
                     android:layout_height="210dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
@@ -42,11 +42,13 @@
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="340dp"
+                    android:layout_width="match_parent"
                     android:layout_height="210dp"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
-                    android:background="@drawable/mainfont" />
+                    android:background="@drawable/mainfont"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"/>
 
 
 
