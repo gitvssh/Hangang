@@ -23,7 +23,9 @@
         <activity android:name=".SearchActivity" />
         <activity android:name=".ProgramActivity" />
         <activity android:name=".LoadingActivity" />
-        <activity android:name=".introduceActivity"></activity>
+        <activity android:name=".introduceActivity"/>
+        <activity android:name=".DirectionActivity"/>
+
     </application>
 
 </manifest>
