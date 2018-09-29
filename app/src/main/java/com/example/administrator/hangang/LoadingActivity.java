@@ -16,6 +16,7 @@ public class LoadingActivity extends AppCompatActivity {
 
     private void startLoading(){
         Handler handler= new Handler();
+
         handler.postDelayed(new Runnable(){
             @Override
             public void run() {
