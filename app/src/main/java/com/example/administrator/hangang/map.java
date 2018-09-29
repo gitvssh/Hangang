@@ -136,10 +136,10 @@ public class map extends AppCompatActivity implements NavigationView.OnNavigatio
     }
 
     public void onButton1Clicked(View v){
-        mapsActivity.addMarker("편의점");
+        mapsActivity.addMarker("편의점",R.drawable.conv_store_small);
     }
     public void onButton2Clicked(View v){
-        mapsActivity.addMarker("화장실");
+        mapsActivity.addMarker("화장실",R.drawable.toilet);
     }
 
 }
