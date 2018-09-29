@@ -50,8 +50,16 @@ public class SearchActivity extends AppCompatActivity {
                 content=mCursor.getString(2);
                 mCursor.close();
             }
-            //TODO:이미지 처리 알고리즘
-            adapter.addItem((new Search(title,content,R.drawable.seoulinkifestival01,index[i])));
+            String resName = "@drawable/prg_";
+            if(index[i]<10) {
+                resName+="0"+index[i];
+            }else{
+                resName+=""+index[i];
+            }
+            String packName = this.getPackageName();
+
+            int resID = getResources().getIdentifier(resName, "drawable", packName);
+            adapter.addItem((new Search(title,content,resID,index[i])));
         }
 
 

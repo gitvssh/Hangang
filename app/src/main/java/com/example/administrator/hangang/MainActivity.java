@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -25,7 +26,13 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
-    private ImageButton imageButton;
+    final int[] SIWON={1,2,3,4,5};
+    final int[] GAMDONG={6,7,8,9,10,11};
+    final int[] ZAYEON={12,13,14,15,16};
+
+    //메인화면 프로그램 버튼들
+    private ImageButton siwon,gamdong,zayeon;
+    private FrameLayout today1,today2,today3,today4;
 
     private DrawerLayout drawerLayout;
     private ActionBar actionBar;
@@ -33,10 +40,11 @@ public class MainActivity extends AppCompatActivity {
     //db변수 선언
     private DbOpenHelper mDbOpenHelper;
     private Cursor mCursor;
-    private Program mProgram;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
 
         Fresco.initialize(getApplicationContext());
@@ -57,17 +65,83 @@ public class MainActivity extends AppCompatActivity {
         mDbOpenHelper.open();
 
 
-        //화면이동 테스트
-        imageButton= findViewById(R.id.MainButton1);
-
-        imageButton.setOnClickListener(new View.OnClickListener() {
+        //시원한강
+        siwon= findViewById(R.id.MainButton1);
+        siwon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
-                //TODO:인텐트에 검색조건 넣어야함
-                int[] index={1,2};
-                intent.putExtra("index",index);
+
+                intent.putExtra("index",SIWON);
+                startActivity(intent);
+            }
+        });
+
+        //감동한강
+        gamdong= findViewById(R.id.MainButton2);
+        gamdong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
+
+                intent.putExtra("index",GAMDONG);
+                startActivity(intent);
+            }
+        });
+
+        //자연한강
+        zayeon= findViewById(R.id.MainButton3);
+        zayeon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
+
+                intent.putExtra("index",ZAYEON);
+                startActivity(intent);
+            }
+        });
+
+        //오늘의 행사
+        today1=findViewById(R.id.main_today1);
+        today1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),ProgramActivity.class);
+
+                intent.putExtra("index",16);
+                startActivity(intent);
+            }
+        });
+        today2=findViewById(R.id.main_today2);
+        today2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),ProgramActivity.class);
+
+                intent.putExtra("index",1);
+                startActivity(intent);
+            }
+        });
+        today3=findViewById(R.id.main_today3);
+        today3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),ProgramActivity.class);
+
+                intent.putExtra("index",9);
+                startActivity(intent);
+            }
+        });
+        today4=findViewById(R.id.main_today4);
+        today4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),ProgramActivity.class);
+
+                intent.putExtra("index",15);
                 startActivity(intent);
             }
         });

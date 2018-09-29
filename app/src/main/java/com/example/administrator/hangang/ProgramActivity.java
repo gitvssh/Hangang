@@ -33,7 +33,9 @@ public class ProgramActivity extends AppCompatActivity {
         mDbOpenHelper.open();
 
         //인덱스로 쿼리실행
-        Cursor c1 = mDbOpenHelper.executeRawQuery(index);
+        if(index!=-1) {
+            Cursor c1 = mDbOpenHelper.executeRawQuery(index);
+
 
         //레이아웃 객체 초기화
         prg_img=findViewById(R.id.prg_img);
@@ -55,9 +57,17 @@ public class ProgramActivity extends AppCompatActivity {
             c1.close();
         }
 
-        //TODO:이미지처리 알고리즘, 수정필요
+        //이미지 처리 알고리즘
+        String resName = "@drawable/prg_";
+        if(index<10) {
+            resName+="0"+index;
+        }else{
+            resName+=""+index;
+        }
+        String packName = this.getPackageName();
 
-        prg_img.setBackgroundResource(R.drawable.seoulinkifestival01);
+        int resID = getResources().getIdentifier(resName, "drawable", packName);
+        prg_img.setBackgroundResource(resID);
 
 
         //값 설정
@@ -67,6 +77,6 @@ public class ProgramActivity extends AppCompatActivity {
         prg_place.setText(place);
         prg_participate.setText(participate);
         prg_fee.setText(fee);
-
+        }
     }
 }
