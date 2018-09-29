@@ -3,6 +3,8 @@ package com.example.administrator.hangang;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -14,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.example.administrator.hangang.database.DbOpenHelper;
@@ -25,7 +28,7 @@ import com.jude.rollviewpager.adapter.LoopPagerAdapter;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     final int[] SIWON={1,2,3,4,5};
     final int[] GAMDONG={6,7,8,9,10,11};
     final int[] ZAYEON={12,13,14,15,16};
@@ -60,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
         RollPagerView mRollViewPager = (RollPagerView)findViewById(R.id.rollpagerview);
         mRollViewPager.setAdapter(new TestLoopAdapter(mRollViewPager));
 
+        NavigationView navigationView = (NavigationView) findViewById(R.id.naviView);
+        navigationView.setNavigationItemSelectedListener(this);
         //db create and open
         mDbOpenHelper = new DbOpenHelper(this);
         mDbOpenHelper.open();
@@ -153,6 +158,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.navi_theme){
+
+            Intent intent=new Intent(MainActivity.this,ProgramActivity.class);
+            startActivity(intent);
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }
+
+
+
+        return false;
     }
 
 

@@ -3,24 +3,48 @@
 
 <item android:title="한강몽땅">
     <menu>
-    <item android:title="한강몽땅 소개" android:icon="@mipmap/baseline_crop_original_black_18dp"/>
-    <item android:title="한강몽땅SNS" android:icon="@mipmap/baseline_email_black_18dp"/>
-    <item android:title="편의시설" android:icon="@mipmap/baseline_commute_black_18dp"/>
+    <item
+        android:id="@+id/navi_hangang"
+        android:title="한강몽땅 소개"
+        android:icon="@mipmap/baseline_crop_original_black_18dp"/>
+    <item
+        android:id="@+id/navi_sns"
+        android:title="한강몽땅SNS"
+        android:icon="@mipmap/baseline_email_black_18dp"/>
+    <item
+        android:id="@+id/navi_cvs"
+        android:title="편의시설"
+        android:icon="@mipmap/baseline_commute_black_18dp"/>
     </menu>
 </item>
 
 <item android:title="프로그램">
     <menu>
-    <item android:title="테마별 프로그램" android:icon="@mipmap/baseline_image_black_18dp"/>
-    <item android:title="날짜별 프로그램" android:icon="@mipmap/baseline_calendar_today_black_18dp"/>
-    <item android:title="프로그램 예약하기" android:icon="@mipmap/baseline_notifications_black_18dp"/>
+    <item
+        android:id="@+id/navi_theme"
+        android:title="테마별 프로그램"
+        android:icon="@mipmap/baseline_image_black_18dp"/>
+    <item
+        android:id="@+id/navi_date"
+        android:title="날짜별 프로그램"
+        android:icon="@mipmap/baseline_calendar_today_black_18dp"/>
+    <item
+        android:id="@+id/navi_reserv"
+        android:title="프로그램 예약하기"
+        android:icon="@mipmap/baseline_notifications_black_18dp"/>
     </menu>
 </item>
 
 <item android:title="커뮤니티">
     <menu>
-    <item android:title="공지사항" android:icon="@mipmap/baseline_event_note_black_18dp"/>
-    <item android:title="QnA" android:icon="@mipmap/baseline_question_answer_black_18dp"/>
+    <item
+        android:id="@+id/notice"
+        android:title="공지사항"
+        android:icon="@mipmap/baseline_event_note_black_18dp"/>
+    <item
+        android:id="@+id/navi_qna"
+        android:title="QnA"
+        android:icon="@mipmap/baseline_question_answer_black_18dp"/>
     </menu>
 </item>
 </menu>
