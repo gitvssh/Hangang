@@ -308,7 +308,80 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         language=1;
 
-    }else if(id==R.id.navi_english){//2
+            TextView main_notice=findViewById(R.id.main_notice);
+            main_notice.setText(R.string.notice);
+
+            TextView main_btn1=findViewById(R.id.main_btn1);
+            main_btn1.setText(R.string.btn1);
+
+            TextView main_btn2=findViewById(R.id.main_btn2);
+            main_btn2.setText(R.string.btn2);
+
+            TextView main_btn3=findViewById(R.id.main_btn3);
+            main_btn3.setText(R.string.btn3);
+
+            TextView main_today=findViewById(R.id.main_today);
+            main_today.setText(R.string.today);
+
+            TextView main_han1=findViewById(R.id.main_han1);
+            main_han1.setText(R.string.han1);
+
+            TextView main_han2=findViewById(R.id.main_han2);
+            main_han2.setText(R.string.han2);
+
+            TextView main_han3=findViewById(R.id.main_han3);
+            main_han3.setText(R.string.han3);
+
+            TextView main_han4=findViewById(R.id.main_han4);
+            main_han4.setText(R.string.han4);
+
+            TextView navi_menu1=findViewById(R.id.navi_menu1);
+            navi_menu1.setText(R.string.navi_menu1);
+
+            TextView navi_home=findViewById(R.id.navi_home);
+            navi_home.setText(R.string.navi_home);
+
+            TextView navi_hangang=findViewById(R.id.navi_hangang);
+            navi_hangang.setText(R.string.navi_hangang);
+
+            TextView navi_direct=findViewById(R.id.navi_direct);
+            navi_direct.setText(R.string.navi_direct);
+
+            TextView navi_menu2=findViewById(R.id.navi_menu2);
+            navi_menu2.setText(R.string.navi_menu2);
+
+            TextView navi_theme=findViewById(R.id.navi_theme);
+            navi_theme.setText(R.string.navi_theme);
+
+            TextView navi_date=findViewById(R.id.navi_date);
+            navi_date.setText(R.string.navi_date);
+
+            TextView navi_reserv=findViewById(R.id.navi_reserv);
+            navi_reserv.setText(R.string.navi_reserv);
+
+            TextView navi_menu3=findViewById(R.id.navi_menu3);
+            navi_menu3.setText(R.string.navi_menu3);
+
+            TextView navi_notice=findViewById(R.id.navi_notice);
+            navi_notice.setText(R.string.navi_notice);
+
+            TextView navi_cvs=findViewById(R.id.navi_cvs);
+            navi_cvs.setText(R.string.navi_cvs);
+
+            TextView prg_label_date=findViewById(R.id.prg_label_date);
+            prg_label_date.setText(R.string.prg_label_date);
+
+            TextView prg_label_place=findViewById(R.id.prg_label_place);
+            prg_label_place.setText(R.string.prg_label_place);
+
+            TextView prg_label_participate=findViewById(R.id.prg_label_participate);
+            prg_label_participate.setText(R.string.prg_label_participate);
+
+            TextView prg_label_fee=findViewById(R.id.prg_label_fee);
+            prg_label_fee.setText(R.string.prg_label_fee);
+
+
+        }else if(id==R.id.navi_english){//2
             if(language==2){
                 return false;
             }
@@ -317,6 +390,76 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             TextView main_notice=findViewById(R.id.main_notice);
             main_notice.setText(R.string.notice_2);
+
+            TextView main_btn1=findViewById(R.id.main_btn1);
+            main_btn1.setText(R.string.btn1_2);
+
+            TextView main_btn2=findViewById(R.id.main_btn2);
+            main_btn2.setText(R.string.btn2_2);
+
+            TextView main_btn3=findViewById(R.id.main_btn3);
+            main_btn3.setText(R.string.btn3_2);
+
+            TextView main_today=findViewById(R.id.main_today);
+            main_today.setText(R.string.today_2);
+
+            TextView main_han1=findViewById(R.id.main_han1);
+            main_han1.setText(R.string.han1_2);
+
+            TextView main_han2=findViewById(R.id.main_han2);
+            main_han2.setText(R.string.han2_2);
+
+            TextView main_han3=findViewById(R.id.main_han3);
+            main_han3.setText(R.string.han3_2);
+
+            TextView main_han4=findViewById(R.id.main_han4);
+            main_han4.setText(R.string.han4_2);
+
+            TextView navi_menu1=findViewById(R.id.navi_menu1);
+            navi_menu1.setText(R.string.navi_menu1_2);
+
+            TextView navi_home=findViewById(R.id.navi_home);
+            navi_home.setText(R.string.navi_home_2);
+
+            TextView navi_hangang=findViewById(R.id.navi_hangang);
+            navi_hangang.setText(R.string.navi_hangang_2);
+
+            TextView navi_direct=findViewById(R.id.navi_direct);
+            navi_direct.setText(R.string.navi_direct_2);
+
+            TextView navi_menu2=findViewById(R.id.navi_menu2);
+            navi_menu2.setText(R.string.navi_menu2_2);
+
+            TextView navi_theme=findViewById(R.id.navi_theme);
+            navi_theme.setText(R.string.navi_theme_2);
+
+            TextView navi_date=findViewById(R.id.navi_date);
+            navi_date.setText(R.string.navi_date_2);
+
+            TextView navi_reserv=findViewById(R.id.navi_reserv);
+            navi_reserv.setText(R.string.navi_reserv_2);
+
+            TextView navi_menu3=findViewById(R.id.navi_menu3);
+            navi_menu3.setText(R.string.navi_menu3_2);
+
+            TextView navi_notice=findViewById(R.id.navi_notice);
+            navi_notice.setText(R.string.navi_notice_2);
+
+            TextView navi_cvs=findViewById(R.id.navi_cvs);
+            navi_cvs.setText(R.string.navi_cvs_2);
+
+            TextView prg_label_date=findViewById(R.id.prg_label_date);
+            prg_label_date.setText(R.string.prg_label_date_2);
+
+            TextView prg_label_place=findViewById(R.id.prg_label_place);
+            prg_label_place.setText(R.string.prg_label_place_2);
+
+            TextView prg_label_participate=findViewById(R.id.prg_label_participate);
+            prg_label_participate.setText(R.string.prg_label_participate_2);
+
+            TextView prg_label_fee=findViewById(R.id.prg_label_fee);
+            prg_label_fee.setText(R.string.prg_label_fee_2);
+
     }else if(id==R.id.navi_japanese){//3
 
             if(language==3){
