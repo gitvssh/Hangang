@@ -120,6 +120,7 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback,GoogleM
 
 
                 }
+                setCurrentLocation(location,"시작","marker",12);
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng( location.getLatitude(), location.getLongitude()),15));
             }catch(Exception e){}
 
