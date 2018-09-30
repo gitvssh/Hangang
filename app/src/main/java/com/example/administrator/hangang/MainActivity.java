@@ -4,6 +4,9 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -16,6 +19,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +27,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
@@ -33,6 +38,7 @@ import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.LoopPagerAdapter;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ActivityCompat.OnRequestPermissionsResultCallback{
@@ -283,6 +289,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
              startActivity(intent);
              drawerLayout.closeDrawer(GravityCompat.START);
 
+        }else if(id==R.id.navi_korean){
+            Locale en = new Locale("Korean");
+            Configuration config = new Configuration();
+            config.locale = en;
+            getResources().updateConfiguration(config, null);
+
+        }else if(id==R.id.navi_japanese){
+
+            TextView notice =findViewById(R.id.main_notice);
+            notice.setText(R.string.today);
+
+
+        }else if(id==R.id.navi_english){
+            Locale en = Locale.US;
+            Configuration config = new Configuration();
+            config.locale = en;
+            getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+        }else if(id==R.id.navi_chinese){
+            Locale en = Locale.TRADITIONAL_CHINESE;
+            Configuration config = new Configuration();
+            config.locale = en;
+            getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+        }else if(id==R.id.navi_chinese2){
+            Locale en = Locale.TRADITIONAL_CHINESE;
+            Configuration config = new Configuration();
+            config.locale = en;
+            getResources().updateConfiguration(config, getResources().getDisplayMetrics());
         }
 
 
