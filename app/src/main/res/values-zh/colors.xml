@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="siwon">#2a89c9</color>
+    <color name="gamdong">#69c1b5</color>
+    <color name="zayeon">#c3a0c8</color>
+    <color name="sere">#92a8d1</color>
+    <color name="blue">#6a74ad</color>
+    <color name="arc">#bfc7d6 </color>
+    <color name="little">#6CA0DC </color>
+</resources>

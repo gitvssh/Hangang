@@ -2,7 +2,7 @@
     <string name="app_name">Hangang</string>
 
     //MainActivity String source
-    <string name="notice">테마별 프로그램</string>
+    <string name="notice">일본어 테마별 프로그램</string>
     <string name="btn1">시원한강\n프로그램</string>
     <string name="btn2">감동한강\n프로그램</string>
     <string name="btn3">자연한강\n프로그램</string>

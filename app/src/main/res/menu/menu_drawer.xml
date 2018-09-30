@@ -1,52 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-<item android:title="한강몽땅">
+<item android:title="@string/navi_menu1"
+        android:id="@+id/navi_menu1"
+    >
     <menu>
         <item
             android:id="@+id/navi_home"
-            android:title="홈으로"
+            android:title="@string/navi_home"
             android:icon="@mipmap/baseline_home_black_18dp"
 
             />
     <item
         android:id="@+id/navi_hangang"
-        android:title="한강몽땅 소개"
+        android:title="@string/navi_hangang"
         android:icon="@mipmap/baseline_crop_original_black_18dp"/>
     <item
         android:id="@+id/navi_direct"
-        android:title="오시는 길"
+        android:title="@string/navi_direct"
         android:icon="@mipmap/baseline_map_black_18dp"/>
 
     </menu>
 </item>
 
-<item android:title="프로그램">
+<item android:title="@string/navi_menu2"
+    android:id="@+id/navi_menu2">
     <menu>
     <item
         android:id="@+id/navi_theme"
-        android:title="테마별 프로그램"
+        android:title="@string/navi_theme"
         android:icon="@mipmap/baseline_image_black_18dp"/>
     <item
         android:id="@+id/navi_date"
-        android:title="날짜별 프로그램"
+        android:title="@string/navi_date"
         android:icon="@mipmap/baseline_calendar_today_black_18dp"/>
     <item
         android:id="@+id/navi_reserv"
-        android:title="프로그램 예약하기"
+        android:title="@string/navi_reserv"
         android:icon="@mipmap/baseline_notifications_black_18dp"/>
     </menu>
 </item>
 
-<item android:title="행사관련">
+<item android:title="@string/navi_menu3"
+    android:id="@+id/navi_menu3">
     <menu>
     <item
         android:id="@+id/navi_notice"
-        android:title="공지사항"
+        android:title="@string/navi_notice"
         android:icon="@mipmap/baseline_event_note_black_18dp"/>
     <item
         android:id="@+id/navi_cvs"
-        android:title="편의시설"
+        android:title="@string/navi_cvs"
         android:icon="@mipmap/baseline_commute_black_18dp"/>
     </menu>
 </item>
