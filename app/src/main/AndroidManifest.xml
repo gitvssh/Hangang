@@ -29,9 +29,15 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
+                <!--검색기능을 위해 추가-->
+                <action android:name="android.intent.action.SEARCH"/>
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <!--검색기능을 위해 추가-->
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
         </activity>
         <activity android:name=".SearchActivity" />
         <activity android:name=".ProgramActivity" />

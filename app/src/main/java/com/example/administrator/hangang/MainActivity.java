@@ -10,8 +10,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.internal.NavigationMenuItemView;
-import android.support.design.internal.NavigationMenuView;
+
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -19,7 +18,8 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DividerItemDecoration;
+
+import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -85,9 +85,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         actionBar.setTitle("");//타이틀 삭제
         actionBar.setBackgroundDrawable(getDrawable(R.color.arc));//액션바 색상 변경
 
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.naviView);
         navigationView.setNavigationItemSelectedListener(this);//네비게이션뷰 리스너
         navigationView.setItemBackgroundResource(R.color.white);
+
 
 
 
@@ -225,8 +227,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);
-        return super.onCreateOptionsMenu(menu);
-    }
+
+      SearchView searchView = (SearchView)menu.findItem(R.id.bar_search).getActionView();
+        searchView.setMaxWidth(Integer.MAX_VALUE);
+
+        searchView.setQueryHint("프로그램 이름 입력");
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+
+                Toast.makeText(getApplicationContext(),"검색을 완료했습니다.",Toast.LENGTH_LONG).show();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                Toast.makeText(getApplicationContext(),"입력중입니다.",Toast.LENGTH_LONG).show();
+                return false;
+            }
+        });
+            return true;
+            }
     //홈버튼 네비게이션뷰 온오프
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -237,6 +258,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }else{
                 drawerLayout.closeDrawer(GravityCompat.START);
             }
+        }else if (id == R.id.bar_search){
+            //TODO 검색했을때 쿼리 구현
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
