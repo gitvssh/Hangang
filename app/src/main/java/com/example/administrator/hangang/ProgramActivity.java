@@ -94,7 +94,10 @@ public class ProgramActivity extends AppCompatActivity implements NavigationView
 
         //이미지 처리 알고리즘
             if(index>16){
-            index=index%16+1;
+            index=index%16;
+            if(index==0){
+                index=16;
+            }
             }
         String resName = "@drawable/prg_";
         if(index<10) {
@@ -187,9 +190,9 @@ public class ProgramActivity extends AppCompatActivity implements NavigationView
 
         }else if (id == R.id.navi_theme){
 
-            Intent intent=new Intent(ProgramActivity.this,ProgramActivity.class);
-            startActivity(intent);
-            drawerLayout.closeDrawer(GravityCompat.START);
+//            Intent intent=new Intent(ProgramActivity.this,ProgramActivity.class);
+//            startActivity(intent);
+//            drawerLayout.closeDrawer(GravityCompat.START);
 
         }else if (id == R.id.navi_date){
 

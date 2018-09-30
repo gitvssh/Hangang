@@ -171,10 +171,10 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
             drawerLayout.closeDrawer(GravityCompat.START);
 
         }else if (id == R.id.navi_theme){
-
-            Intent intent=new Intent(SearchActivity.this,ProgramActivity.class);
-            startActivity(intent);
-            drawerLayout.closeDrawer(GravityCompat.START);
+//
+//            Intent intent=new Intent(SearchActivity.this,ProgramActivity.class);
+//            startActivity(intent);
+//            drawerLayout.closeDrawer(GravityCompat.START);
 
         }else if (id == R.id.navi_date){
 

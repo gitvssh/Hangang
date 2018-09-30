@@ -374,7 +374,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }else if (id == R.id.navi_date){
 
-            Intent intent=new Intent(MainActivity.this,PrepareActivity.class);
+            Intent intent=new Intent(getApplicationContext(),PrepareActivity.class);
             startActivity(intent);
             drawerLayout.closeDrawer(GravityCompat.START);
 
@@ -387,13 +387,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }else if (id == R.id.navi_notice){
 
-            Intent intent=new Intent(MainActivity.this,PrepareActivity.class);
+            Intent intent=new Intent(getApplicationContext(),PrepareActivity.class);
             startActivity(intent);
             drawerLayout.closeDrawer(GravityCompat.START);
 
         }else if (id == R.id.navi_cvs){
 
-             Intent intent=new Intent(MainActivity.this,map.class);
+             Intent intent=new Intent(getApplicationContext(),map.class);
              startActivity(intent);
              drawerLayout.closeDrawer(GravityCompat.START);
 

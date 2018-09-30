@@ -28,7 +28,6 @@ public class DbOpenHelper {
         @Override
         public void onCreate(SQLiteDatabase db) {
             db.execSQL(DataBase.CreateDB.CREATE);
-            //TODO : 최초생성시 프로그램 정보 입력SQL 여기다 넣어야함
 
             db.execSQL("insert into hanGang(_id, title, content, date, place, participate, fee) values('1', '한강수상놀이터'," +
                     " '카약, 카누, 패들보드, 수상자전거, 오리보트', '7.20(금)~8.19(일) 10:00~22:00(무동력은 19:00까지)', " +
