@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     final int[] ZAYEON={12,13,14,15,16};
 
     int language = 1;//언어설정값 1:한국어, 2:영어, 3:일본어, 4:중국어1, 5:중국어2
-
+    int correctionfactor=0;
     //메인화면 프로그램 버튼들
     private ImageButton siwon,gamdong,zayeon;
     private FrameLayout today1,today2,today3,today4;
@@ -118,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
 
                 intent.putExtra("index",SIWON);
+                intent.putExtra("lan",language);
                 startActivity(intent);
             }
         });
@@ -131,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
 
                 intent.putExtra("index",GAMDONG);
+                intent.putExtra("lan",language);
                 startActivity(intent);
             }
         });
@@ -144,6 +146,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
 
                 intent.putExtra("index",ZAYEON);
+                intent.putExtra("lan",language);
                 startActivity(intent);
             }
         });
@@ -154,8 +157,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),ProgramActivity.class);
-
-                intent.putExtra("index",16);
+                switch(language){
+                    case 1:
+                        correctionfactor=0;
+                        break;
+                    case 2:
+                        correctionfactor=16;
+                        break;
+                    case 3:
+                        correctionfactor=32;
+                        break;
+                    case 4:
+                        correctionfactor=48;
+                        break;
+                    case 5:
+                        correctionfactor=64;
+                        break;
+                }
+                intent.putExtra("index",16+correctionfactor);
                 startActivity(intent);
             }
         });
@@ -164,8 +183,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),ProgramActivity.class);
-
-                intent.putExtra("index",1);
+                switch(language){
+                    case 1:
+                        correctionfactor=0;
+                        break;
+                    case 2:
+                        correctionfactor=16;
+                        break;
+                    case 3:
+                        correctionfactor=32;
+                        break;
+                    case 4:
+                        correctionfactor=48;
+                        break;
+                    case 5:
+                        correctionfactor=64;
+                        break;
+                }
+                intent.putExtra("index",1+correctionfactor);
                 startActivity(intent);
             }
         });
@@ -174,8 +209,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),ProgramActivity.class);
-
-                intent.putExtra("index",9);
+                switch(language){
+                    case 1:
+                        correctionfactor=0;
+                        break;
+                    case 2:
+                        correctionfactor=16;
+                        break;
+                    case 3:
+                        correctionfactor=32;
+                        break;
+                    case 4:
+                        correctionfactor=48;
+                        break;
+                    case 5:
+                        correctionfactor=64;
+                        break;
+                }
+                intent.putExtra("index",9+correctionfactor);
                 startActivity(intent);
             }
         });
@@ -184,8 +235,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),ProgramActivity.class);
-
-                intent.putExtra("index",15);
+                switch(language){
+                    case 1:
+                        correctionfactor=0;
+                        break;
+                    case 2:
+                        correctionfactor=16;
+                        break;
+                    case 3:
+                        correctionfactor=32;
+                        break;
+                    case 4:
+                        correctionfactor=48;
+                        break;
+                    case 5:
+                        correctionfactor=64;
+                        break;
+                }
+                intent.putExtra("index",15+correctionfactor);
                 startActivity(intent);
             }
         });
@@ -274,7 +341,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }else if (id == R.id.navi_theme){
 
-            Intent intent=new Intent(MainActivity.this,ProgramActivity.class);
+            Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
+
+            intent.putExtra("index",SIWON);
+            intent.putExtra("lan",language);
             startActivity(intent);
             drawerLayout.closeDrawer(GravityCompat.START);
 
@@ -615,4 +685,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             // permissions this app might request
         }
     }
+
 }
