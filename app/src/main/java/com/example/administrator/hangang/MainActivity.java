@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -27,6 +28,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
@@ -37,12 +39,15 @@ import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.LoopPagerAdapter;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ActivityCompat.OnRequestPermissionsResultCallback{
     final int[] SIWON={1,2,3,4,5};
     final int[] GAMDONG={6,7,8,9,10,11};
     final int[] ZAYEON={12,13,14,15,16};
+
+    int language = 1;//언어설정값 1:한국어, 2:영어, 3:일본어, 4:중국어1, 5:중국어2
 
     //메인화면 프로그램 버튼들
     private ImageButton siwon,gamdong,zayeon;
@@ -297,8 +302,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
              startActivity(intent);
              drawerLayout.closeDrawer(GravityCompat.START);
 
+    }else if(id==R.id.navi_korean){//1
+        if(language==1){
+            return false;
         }
+        language=1;
 
+    }else if(id==R.id.navi_english){//2
+            if(language==2){
+                return false;
+            }
+
+            language=2;
+
+            TextView main_notice=findViewById(R.id.main_notice);
+            main_notice.setText(R.string.notice_2);
+    }else if(id==R.id.navi_japanese){//3
+
+            if(language==3){
+                return false;
+            }
+            language=3;
+    }else if(id==R.id.navi_chinese){//4
+
+            if(language==4){
+                return false;
+            }
+            language=4;
+    }else if(id==R.id.navi_chinese2){//5
+
+            if(language==5){
+                return false;
+            }
+            language=5;
+    }
 
         return false;
     }
