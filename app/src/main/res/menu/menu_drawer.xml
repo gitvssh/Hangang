@@ -53,5 +53,34 @@
         android:title="@string/navi_cvs"
         android:icon="@mipmap/baseline_commute_black_18dp"/>
     </menu>
+
 </item>
+    <item android:title="언어지원"
+        android:id="@+id/navi_menu4">
+        <menu>
+            <item
+                android:id="@+id/navi_korean"
+                android:title="한국어"
+                />
+            <item
+                android:id="@+id/navi_japanese"
+                android:title="日本語"
+                />
+            <item
+                android:id="@+id/navi_chinese"
+                android:title="简体中文"
+                />
+            <item
+                android:id="@+id/navi_chinese2"
+                android:title="繁體中文"
+                />
+            <item
+                android:id="@+id/navi_english"
+                android:title="English"
+                />
+
+        </menu>
+
+    </item>
+
 </menu>
