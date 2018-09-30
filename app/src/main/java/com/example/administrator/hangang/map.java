@@ -45,9 +45,11 @@ public class map extends AppCompatActivity implements NavigationView.OnNavigatio
         actionBar.setHomeAsUpIndicator(R.mipmap.baseline_dehaze_white_18dp);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("");
+        actionBar.setBackgroundDrawable(getDrawable(R.color.arc));//액션바 색상 변경
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.naviView);
         navigationView.setNavigationItemSelectedListener(this);//네비게이션뷰 리스너
+        navigationView.setItemBackgroundResource(R.color.white);
 
     }
 

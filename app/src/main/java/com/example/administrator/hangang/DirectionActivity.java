@@ -30,6 +30,7 @@ public class DirectionActivity extends AppCompatActivity implements NavigationVi
         actionBar.setHomeAsUpIndicator(R.mipmap.baseline_dehaze_white_18dp);//홈버튼 아이콘 설정
         actionBar.setDisplayHomeAsUpEnabled(true);//홈기능 활성화
         actionBar.setTitle("");//타이틀 삭제
+        actionBar.setBackgroundDrawable(getDrawable(R.color.arc));//액션바 색상 변경
         NavigationView navigationView = (NavigationView) findViewById(R.id.naviView);
         navigationView.setNavigationItemSelectedListener(this);//네비게이션뷰 리스너
         navigationView.setItemBackgroundResource(R.color.white);//네비게이션 색상 조정
@@ -106,10 +107,9 @@ public class DirectionActivity extends AppCompatActivity implements NavigationVi
 //            drawerLayout.closeDrawer(GravityCompat.START);
 
         }else if (id == R.id.navi_cvs){
-//TODO"편의시설 연결"
-//            Intent intent=new Intent(DirectionActivity.this,MapActivity.class);
-//            startActivity(intent);
-//            drawerLayout.closeDrawer(GravityCompat.START);
+            Intent intent=new Intent(DirectionActivity.this,map.class);
+            startActivity(intent);
+            drawerLayout.closeDrawer(GravityCompat.START);
 
         }
 

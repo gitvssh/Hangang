@@ -83,6 +83,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         actionBar.setHomeAsUpIndicator(R.mipmap.baseline_dehaze_white_18dp);//홈버튼 아이콘 설정
         actionBar.setDisplayHomeAsUpEnabled(true);//홈기능 활성화
         actionBar.setTitle("");//타이틀 삭제
+        actionBar.setBackgroundDrawable(getDrawable(R.color.arc));//액션바 색상 변경
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.naviView);
         navigationView.setNavigationItemSelectedListener(this);//네비게이션뷰 리스너
         navigationView.setItemBackgroundResource(R.color.white);
