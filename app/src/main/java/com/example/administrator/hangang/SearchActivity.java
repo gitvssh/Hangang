@@ -30,7 +30,8 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
     //db변수 선언
     private DbOpenHelper mDbOpenHelper;
     private Cursor mCursor;
-
+    int language;
+    int correctionfactor;
     //db에서 읽어온 값 저장할 변수
     String title,content;
 
@@ -40,6 +41,24 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
         setContentView(R.layout.activity_search);
 
         listview = (ListView) findViewById(R.id.s_listview);
+        language = getIntent().getIntExtra("lan",1);
+        switch(language){
+            case 1:
+                correctionfactor=0;
+                break;
+            case 2:
+                correctionfactor=16;
+                break;
+            case 3:
+                correctionfactor=32;
+                break;
+            case 4:
+                correctionfactor=48;
+                break;
+            case 5:
+                correctionfactor=64;
+                break;
+        }
 
         //db create and open
         mDbOpenHelper = new DbOpenHelper(this);
@@ -64,7 +83,7 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
 
 
         for(int i=0;i<index.length;i++){
-            mCursor=mDbOpenHelper.executeRawQuery(index[i]);
+            mCursor=mDbOpenHelper.executeRawQuery(index[i]+correctionfactor);
             if(mCursor!=null&&mCursor.moveToFirst()) {
                 title = mCursor.getString(1);
                 content=mCursor.getString(2);
@@ -79,7 +98,7 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
             String packName = this.getPackageName();
 
             int resID = getResources().getIdentifier(resName, "drawable", packName);
-            adapter.addItem((new Search(title,content,resID,index[i])));
+            adapter.addItem((new Search(title,content,resID,index[i]+correctionfactor)));
         }
 
 
