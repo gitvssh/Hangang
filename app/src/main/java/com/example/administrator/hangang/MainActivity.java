@@ -335,7 +335,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             TextView main_han4=findViewById(R.id.main_han4);
             main_han4.setText(R.string.han4);
 
-            TextView navi_menu1=findViewById(R.id.navi_menu1);
+            /*TextView navi_menu1=findViewById(R.id.navi_menu1);
             navi_menu1.setText(R.string.navi_menu1);
 
             TextView navi_home=findViewById(R.id.navi_home);
@@ -378,7 +378,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             prg_label_participate.setText(R.string.prg_label_participate);
 
             TextView prg_label_fee=findViewById(R.id.prg_label_fee);
-            prg_label_fee.setText(R.string.prg_label_fee);
+            prg_label_fee.setText(R.string.prg_label_fee);*/
 
 
         }else if(id==R.id.navi_english){//2
@@ -414,7 +414,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             TextView main_han4=findViewById(R.id.main_han4);
             main_han4.setText(R.string.han4_2);
-
+/*
             TextView navi_menu1=findViewById(R.id.navi_menu1);
             navi_menu1.setText(R.string.navi_menu1_2);
 
@@ -458,7 +458,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             prg_label_participate.setText(R.string.prg_label_participate_2);
 
             TextView prg_label_fee=findViewById(R.id.prg_label_fee);
-            prg_label_fee.setText(R.string.prg_label_fee_2);
+            prg_label_fee.setText(R.string.prg_label_fee_2);*/
 
     }else if(id==R.id.navi_japanese){//3
 
@@ -466,18 +466,99 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return false;
             }
             language=3;
+
+            TextView main_notice=findViewById(R.id.main_notice);
+            main_notice.setText(R.string.notice_3);
+
+            TextView main_btn1=findViewById(R.id.main_btn1);
+            main_btn1.setText(R.string.btn1_3);
+
+            TextView main_btn2=findViewById(R.id.main_btn2);
+            main_btn2.setText(R.string.btn2_3);
+
+            TextView main_btn3=findViewById(R.id.main_btn3);
+            main_btn3.setText(R.string.btn3_3);
+
+            TextView main_today=findViewById(R.id.main_today);
+            main_today.setText(R.string.today_3);
+
+            TextView main_han1=findViewById(R.id.main_han1);
+            main_han1.setText(R.string.han1_3);
+
+            TextView main_han2=findViewById(R.id.main_han2);
+            main_han2.setText(R.string.han2_3);
+
+            TextView main_han3=findViewById(R.id.main_han3);
+            main_han3.setText(R.string.han3_3);
+
+            TextView main_han4=findViewById(R.id.main_han4);
+            main_han4.setText(R.string.han4_3);
     }else if(id==R.id.navi_chinese){//4
 
             if(language==4){
                 return false;
             }
             language=4;
+
+            TextView main_notice=findViewById(R.id.main_notice);
+            main_notice.setText(R.string.notice_4);
+
+            TextView main_btn1=findViewById(R.id.main_btn1);
+            main_btn1.setText(R.string.btn1_4);
+
+            TextView main_btn2=findViewById(R.id.main_btn2);
+            main_btn2.setText(R.string.btn2_4);
+
+            TextView main_btn3=findViewById(R.id.main_btn3);
+            main_btn3.setText(R.string.btn3_4);
+
+            TextView main_today=findViewById(R.id.main_today);
+            main_today.setText(R.string.today_4);
+
+            TextView main_han1=findViewById(R.id.main_han1);
+            main_han1.setText(R.string.han1_4);
+
+            TextView main_han2=findViewById(R.id.main_han2);
+            main_han2.setText(R.string.han2_4);
+
+            TextView main_han3=findViewById(R.id.main_han3);
+            main_han3.setText(R.string.han3_4);
+
+            TextView main_han4=findViewById(R.id.main_han4);
+            main_han4.setText(R.string.han4_4);
     }else if(id==R.id.navi_chinese2){//5
 
             if(language==5){
                 return false;
             }
             language=5;
+
+            TextView main_notice=findViewById(R.id.main_notice);
+            main_notice.setText(R.string.notice_5);
+
+            TextView main_btn1=findViewById(R.id.main_btn1);
+            main_btn1.setText(R.string.btn1_5);
+
+            TextView main_btn2=findViewById(R.id.main_btn2);
+            main_btn2.setText(R.string.btn2_5);
+
+            TextView main_btn3=findViewById(R.id.main_btn3);
+            main_btn3.setText(R.string.btn3_5);
+
+            TextView main_today=findViewById(R.id.main_today);
+            main_today.setText(R.string.today_5);
+
+            TextView main_han1=findViewById(R.id.main_han1);
+            main_han1.setText(R.string.han1_5);
+
+            TextView main_han2=findViewById(R.id.main_han2);
+            main_han2.setText(R.string.han2_5);
+
+            TextView main_han3=findViewById(R.id.main_han3);
+            main_han3.setText(R.string.han3_5);
+
+            TextView main_han4=findViewById(R.id.main_han4);
+            main_han4.setText(R.string.han4_5);
     }
 
         return false;
