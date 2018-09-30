@@ -53,6 +53,7 @@ public class ProgramActivity extends AppCompatActivity implements NavigationView
         actionBar.setTitle("");//타이틀 삭제
         NavigationView navigationView = (NavigationView) findViewById(R.id.naviView);
         navigationView.setNavigationItemSelectedListener(this);//네비게이션뷰 리스너
+        navigationView.setItemBackgroundResource(R.color.white);//네비게이션 색상 조정
 
         //db create and open
         mDbOpenHelper = new DbOpenHelper(this);

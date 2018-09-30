@@ -191,6 +191,10 @@
             android:layout_gravity="start"
             android:fitsSystemWindows="true"
             app:menu="@menu/menu_drawer"
+            android:background="@color/gray"
+            android:theme="@style/NavigationView"
+            app:itemTextColor="@color/black"
+            app:itemIconTint="@color/black"
 
             >
 

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
 <item android:title="@string/navi_menu1"
         android:id="@+id/navi_menu1"
+
+
     >
     <menu>
         <item
@@ -24,7 +27,8 @@
 </item>
 
 <item android:title="@string/navi_menu2"
-    android:id="@+id/navi_menu2">
+    android:id="@+id/navi_menu2"
+    >
     <menu>
     <item
         android:id="@+id/navi_theme"
@@ -42,7 +46,8 @@
 </item>
 
 <item android:title="@string/navi_menu3"
-    android:id="@+id/navi_menu3">
+    android:id="@+id/navi_menu3"
+    >
     <menu>
     <item
         android:id="@+id/navi_notice"
@@ -56,7 +61,8 @@
 
 </item>
     <item android:title="언어지원"
-        android:id="@+id/navi_menu4">
+        android:id="@+id/navi_menu4"
+       >
         <menu>
             <item
                 android:id="@+id/navi_korean"

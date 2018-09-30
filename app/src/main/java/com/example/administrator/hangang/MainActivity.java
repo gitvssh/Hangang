@@ -4,11 +4,14 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.internal.NavigationMenuItemView;
+import android.support.design.internal.NavigationMenuView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -16,6 +19,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -46,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private DrawerLayout drawerLayout;
     private ActionBar actionBar;
+
 
     //db변수 선언
     private DbOpenHelper mDbOpenHelper;
@@ -80,6 +85,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         actionBar.setTitle("");//타이틀 삭제
         NavigationView navigationView = (NavigationView) findViewById(R.id.naviView);
         navigationView.setNavigationItemSelectedListener(this);//네비게이션뷰 리스너
+        navigationView.setItemBackgroundResource(R.color.white);
+
+
+
+
+
+
 //        actionBar.setBackgroundDrawable(new ColorDrawable());
 
         RollPagerView mRollViewPager = (RollPagerView)findViewById(R.id.rollpagerview);
@@ -288,6 +300,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return false;
     }
+
 
     public void getPermission(String permission,int request){
         // 현재 엑티버티의 사용 권한을 동적으로 요청
