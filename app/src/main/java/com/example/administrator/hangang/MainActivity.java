@@ -272,22 +272,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }else if (id == R.id.navi_date){
 
-//            Intent intent=new Intent(MainActivity.this,ProgramActivity.class);
-//            startActivity(intent);
-//            drawerLayout.closeDrawer(GravityCompat.START);
+            Intent intent=new Intent(MainActivity.this,PrepareActivity.class);
+            startActivity(intent);
+            drawerLayout.closeDrawer(GravityCompat.START);
 
         }
         else if (id == R.id.navi_reserv){
 
-//            Intent intent=new Intent(MainActivity.this,ProgramActivity.class);
-//            startActivity(intent);
-//            drawerLayout.closeDrawer(GravityCompat.START);
+            Intent intent=new Intent(MainActivity.this,PrepareActivity.class);
+            startActivity(intent);
+            drawerLayout.closeDrawer(GravityCompat.START);
 
         }else if (id == R.id.navi_notice){
 
-//            Intent intent=new Intent(MainActivity.this,introduceActivity.class);
-//            startActivity(intent);
-//            drawerLayout.closeDrawer(GravityCompat.START);
+            Intent intent=new Intent(MainActivity.this,PrepareActivity.class);
+            startActivity(intent);
+            drawerLayout.closeDrawer(GravityCompat.START);
 
         }else if (id == R.id.navi_cvs){
 
