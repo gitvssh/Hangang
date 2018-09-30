@@ -9,6 +9,7 @@ import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.internal.NavigationMenuItemView;
@@ -285,8 +286,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }
         else if (id == R.id.navi_reserv){
-
-            Intent intent=new Intent(MainActivity.this,PrepareActivity.class);
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("http://hangang.seoul.go.kr/project2018/reservation"));
             startActivity(intent);
             drawerLayout.closeDrawer(GravityCompat.START);
 
