@@ -1,10 +1,11 @@
 package com.example.administrator.hangang;
 
+import android.app.Activity;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class LoadingActivity extends AppCompatActivity {
+public class LoadingActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

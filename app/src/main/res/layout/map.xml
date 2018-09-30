@@ -46,25 +46,27 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/button6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginStart="20dp"
                 android:onClick="onButton1Clicked"
+                android:src="@drawable/conv_store"
                 android:text="편의점"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginStart="40dp"
-                android:text="화장실"
                 android:onClick="onButton2Clicked"
+                android:src="@drawable/toilet_72"
+                android:text="화장실"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/button6" />
 
@@ -72,7 +74,7 @@
         </android.support.constraint.ConstraintLayout>
 
 
-        <!--<android.support.design.widget.NavigationView
+        <android.support.design.widget.NavigationView
             android:layout_height="match_parent"
             android:layout_width="250dp"
             android:fitsSystemWindows="true"
@@ -82,7 +84,7 @@
 
             >
 
-        </android.support.design.widget.NavigationView>-->
+        </android.support.design.widget.NavigationView>
 
     </android.support.v4.widget.DrawerLayout>
 

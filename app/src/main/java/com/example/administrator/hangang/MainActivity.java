@@ -1,16 +1,25 @@
 package com.example.administrator.hangang;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.internal.NavigationMenuItemView;
+import android.support.design.internal.NavigationMenuView;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,7 +39,7 @@ import com.jude.rollviewpager.adapter.LoopPagerAdapter;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ActivityCompat.OnRequestPermissionsResultCallback{
     final int[] SIWON={1,2,3,4,5};
     final int[] GAMDONG={6,7,8,9,10,11};
     final int[] ZAYEON={12,13,14,15,16};
@@ -42,14 +51,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawerLayout;
     private ActionBar actionBar;
 
+
     //db변수 선언
     private DbOpenHelper mDbOpenHelper;
+
+    //위치정보 접근권한 요청 코드
+    static final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 999;
+    static final int MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION = 998;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
 
         super.onCreate(savedInstanceState);
+        //위치정보 접근권한 요청
+        getPermission(Manifest.permission.ACCESS_FINE_LOCATION,MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+        getPermission(Manifest.permission.ACCESS_COARSE_LOCATION,MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION);
+
+
         //로딩화면 실행
         startActivity(new Intent(this,LoadingActivity.class));
 
@@ -65,6 +85,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         actionBar.setTitle("");//타이틀 삭제
         NavigationView navigationView = (NavigationView) findViewById(R.id.naviView);
         navigationView.setNavigationItemSelectedListener(this);//네비게이션뷰 리스너
+        navigationView.setItemBackgroundResource(R.color.white);
+
+
+
+
+
+
 //        actionBar.setBackgroundDrawable(new ColorDrawable());
 
         RollPagerView mRollViewPager = (RollPagerView)findViewById(R.id.rollpagerview);
@@ -272,5 +299,56 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         return false;
+    }
+
+
+    public void getPermission(String permission,int request){
+        // 현재 엑티버티의 사용 권한을 동적으로 요청
+        if (ContextCompat.checkSelfPermission(this,
+                permission)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            // 설명이 필요한 경우 메시지를 발생시키는 내용을 입력
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    permission)) {
+
+                // Show an expanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+
+            } else {
+
+                // 설명없이 사용자 권한을 바로 요청
+                ActivityCompat.requestPermissions(this,
+                        new String[]{permission},
+                        request);
+
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+
+                } else {
+                    Toast.makeText(this,"권한 요청이 거부되었습니다.",Toast.LENGTH_LONG).show();
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                }
+                return;
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request
+        }
     }
 }

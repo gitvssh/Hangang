@@ -22,6 +22,7 @@
 
         >
         <ImageView
+            android:id="@+id/direction"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="오시는 방법"
@@ -35,6 +36,10 @@
             android:layout_gravity="start"
             android:fitsSystemWindows="true"
             app:menu="@menu/menu_drawer"
+            android:background="@color/gray"
+            android:theme="@style/NavigationView"
+            app:itemTextColor="@color/black"
+            app:itemIconTint="@color/black"
 
             >
 
