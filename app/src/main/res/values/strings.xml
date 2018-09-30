@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Hangang</string>
 
-    //MainActivity String source
+    <!-- MainActivity String source -->
     <string name="notice">테마별 프로그램</string>
     <string name="btn1">시원한강\n프로그램</string>
     <string name="btn2">감동한강\n프로그램</string>
@@ -12,7 +12,7 @@
     <string name="han3">한강 다리밑영화제</string>
     <string name="han4">한강 데이트</string>
 
-    //NavigationBar String source
+    <!-- NavigationBar String source -->
     <string name="intro">한강몽땅이란?</string>
     <string name="navi_menu1">한강몽땅</string>
     <string name="navi_home">홈으로</string>
@@ -29,19 +29,159 @@
     <string name="navi_cvs">편의시설</string>
 
 
-    //ProgramActivity String source
+    <!-- ProgramActivity String source -->
     <string name="prg_label_date">| 일시 |</string>
     <string name="prg_label_place">| 장소 |</string>
     <string name="prg_label_participate">| 참여방법 |</string>
     <string name="prg_label_fee">| 참가비용 |</string>
 
 
-    //sample sourcce
+    <!-- 샘플 -->
     <string name="s_title">sample_title</string>
     <string name="s_content">sample_content</string>
     <string name="title_activity_direction">DirectionActivity</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_map">Map</string>
 
+<!-- =====================영어========================== -->
+
+    <!-- MainActivity String source -->
+    <string name="notice_2">themeial program</string>
+    <string name="btn1_2">cool\nHan River\nprogram</string>
+    <string name="btn2_2">impression\nHan River\nprogram</string>
+    <string name="btn3_2">nature\nHan River\nprogram</string>
+    <string name="today_2">Todays event</string>
+    <string name="han1_2">Seoul Night Night Bazaar Night Market</string>
+    <string name="han2_2">Hangang paddle board (SUP) experience</string>
+    <string name="han3_2">Han River under the bridge film festival</string>
+    <string name="han4_2">Han River date</string>
+
+    <!-- NavigationBar String source -->
+    <string name="intro_2">All over Han River?</string>
+    <string name="navi_menu1_2">All of Han River</string>
+    <string name="navi_home_2">Home</string>
+    <string name="navi_hangang_2">About Han River</string>
+    <string name="navi_direct_2">way to come</string>
+
+    <string name="navi_menu2_2">program</string>
+    <string name="navi_theme_2">테마별 프로그램</string>
+    <string name="navi_date_2">날짜별 프로그램</string>
+    <string name="navi_reserv_2">프로그램 예약하기</string>
+
+    <string name="navi_menu3_2">행사관련</string>
+    <string name="navi_notice_2">공지사항</string>
+    <string name="navi_cvs_2">편의시설</string>
+
+
+    <!-- ProgramActivity String source -->
+    <string name="prg_label_date_2">| 일시 |</string>
+    <string name="prg_label_place_2">| 장소 |</string>
+    <string name="prg_label_participate_2">| 참여방법 |</string>
+    <string name="prg_label_fee_2">| 참가비용 |</string>
+<!-- 일본어 -->
+
+    <!-- MainActivity String source -->
+    <string name="notice_3">テーマ別プログラム</string>
+    <string name="btn1_3">クール漢江プログラム</string>
+    <string name="btn2_3">感動漢江プログラム</string>
+    <string name="btn3_3">自然漢江プログラム</string>
+    <string name="today_3">今日のイベント</string>
+    <string name="han1_3">ソウルの夜鬼夜市</string>
+    <string name="han2_3">漢江パドルボード（SUP）体験</string>
+    <string name="han3_3">漢江の橋の下の映画祭</string>
+    <string name="han4_3">漢江デート</string>
+
+    <!-- NavigationBar String source -->
+    <string name="intro_3">한강몽땅이란?</string>
+    <string name="navi_menu1_3">한강몽땅</string>
+    <string name="navi_home_3">홈으로</string>
+    <string name="navi_hangang_3">한강몽땅 소개</string>
+    <string name="navi_direct_3">오시는 길</string>
+
+    <string name="navi_menu2_3">프로그램</string>
+    <string name="navi_theme_3">테마별 프로그램</string>
+    <string name="navi_date_3">날짜별 프로그램</string>
+    <string name="navi_reserv_3">프로그램 예약하기</string>
+
+    <string name="navi_menu3_3">행사관련</string>
+    <string name="navi_notice_3">공지사항</string>
+    <string name="navi_cvs_3">편의시설</string>
+
+
+    <!-- ProgramActivity String source -->
+    <string name="prg_label_date_3">| 일시 |</string>
+    <string name="prg_label_place_3">| 장소 |</string>
+    <string name="prg_label_participate_3">| 참여방법 |</string>
+    <string name="prg_label_fee_3">| 참가비용 |</string>
+<!-- 중국어 -->
+
+    <!-- MainActivity String source -->
+    <string name="notice_4">主题计划</string>
+    <string name="btn1_4">酷河计划</string>
+    <string name="btn2_4">汉江计划</string>
+    <string name="btn3_4">自然汉江计划</string>
+    <string name="today_4">今天的活动</string>
+    <string name="han1_4">首尔夜夜市集夜市</string>
+    <string name="han2_4">汉江桨板（SUP）体验</string>
+    <string name="han3_4">汉江桥电影节</string>
+    <string name="han4_4">汉江约会</string>
+
+    <!-- NavigationBar String source -->
+    <string name="intro_4">한강몽땅이란?</string>
+    <string name="navi_menu1_4">한강몽땅</string>
+    <string name="navi_home_4">홈으로</string>
+    <string name="navi_hangang_4">한강몽땅 소개</string>
+    <string name="navi_direct_4">오시는 길</string>
+
+    <string name="navi_menu2_4">프로그램</string>
+    <string name="navi_theme_4">테마별 프로그램</string>
+    <string name="navi_date_4">날짜별 프로그램</string>
+    <string name="navi_reserv_4">프로그램 예약하기</string>
+
+    <string name="navi_menu3_4">행사관련</string>
+    <string name="navi_notice_4">공지사항</string>
+    <string name="navi_cvs_4">편의시설</string>
+
+
+    <!-- ProgramActivity String source -->
+    <string name="prg_label_date_4">| 일시 |</string>
+    <string name="prg_label_place_4">| 장소 |</string>
+    <string name="prg_label_participate_4">| 참여방법 |</string>
+    <string name="prg_label_fee_4">| 참가비용 |</string>
+<!-- 중국어2-->
+
+    <!-- MainActivity String source -->
+    <string name="notice_5">主題計劃</string>
+    <string name="btn1_5">酷河計劃</string>
+    <string name="btn2_5">漢江計劃</string>
+    <string name="btn3_5">自然漢江計劃</string>
+    <string name="today_5">今天的活動</string>
+    <string name="han1_5">首爾夜夜市集夜市</string>
+    <string name="han2_5">漢江槳板（SUP）體驗</string>
+    <string name="han3_5">漢江橋電影節</string>
+    <string name="han4_5">漢江約會</string>
+
+    <!-- NavigationBar String source -->
+    <string name="intro_5">한강몽땅이란?</string>
+    <string name="navi_menu1_5">한강몽땅</string>
+    <string name="navi_home_5">홈으로</string>
+    <string name="navi_hangang_5">한강몽땅 소개</string>
+    <string name="navi_direct_5">오시는 길</string>
+
+    <string name="navi_menu2_5">프로그램</string>
+    <string name="navi_theme_5">테마별 프로그램</string>
+    <string name="navi_date_5">날짜별 프로그램</string>
+    <string name="navi_reserv_5">프로그램 예약하기</string>
+
+    <string name="navi_menu3_5">행사관련</string>
+    <string name="navi_notice_5">공지사항</string>
+    <string name="navi_cvs_5">편의시설</string>
+
+
+    <!-- ProgramActivity String source -->
+    <string name="prg_label_date_5">| 일시 |</string>
+    <string name="prg_label_place_5">| 장소 |</string>
+    <string name="prg_label_participate_5">| 참여방법 |</string>
+    <string name="prg_label_fee_5">| 참가비용 |</string>
 
 </resources>

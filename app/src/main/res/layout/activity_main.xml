@@ -42,7 +42,8 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_gravity="center"
-                    app:rollviewpager_play_delay="3000" />
+                    app:rollviewpager_play_delay="3000"
+                    android:layout_alignParentLeft="true" />
 
                 <ImageView
                     android:id="@+id/imageView"
@@ -97,7 +98,8 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="@string/btn1"
-                        android:textColor="#c8ffffff" />
+                        android:textColor="#c8ffffff"
+                        android:id="@+id/main_btn1"/>
 
                 </LinearLayout>
 
@@ -120,7 +122,8 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="@string/btn2"
-                        android:textColor="#c8ffffff" />
+                        android:textColor="#c8ffffff"
+                        android:id="@+id/main_btn2"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -142,7 +145,8 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="@string/btn3"
-                        android:textColor="#c8ffffff" />
+                        android:textColor="#c8ffffff"
+                        android:id="@+id/main_btn3"/>
 
                 </LinearLayout>
 
@@ -158,7 +162,8 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:text="@string/today"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:id="@+id/main_today"/>
 
             <TableLayout
                 android:layout_width="wrap_content"
@@ -182,7 +187,8 @@
                             android:background="#88868484"
                             android:text="@string/han1"
                             android:textAlignment="center"
-                            android:textColor="#ffffff" />
+                            android:textColor="#ffffff"
+                            android:id="@+id/main_han1"/>
                     </FrameLayout>
 
                     <FrameLayout
@@ -200,7 +206,8 @@
                             android:background="#88868484"
                             android:text="@string/han2"
                             android:textAlignment="center"
-                            android:textColor="#ffffff" />
+                            android:textColor="#ffffff"
+                            android:id="@+id/main_han2"/>
                     </FrameLayout>
                 </TableRow>
 
@@ -221,7 +228,8 @@
                             android:background="#88868484"
                             android:text="@string/han3"
                             android:textAlignment="center"
-                            android:textColor="#ffffff" />
+                            android:textColor="#ffffff"
+                            android:id="@+id/main_han3"/>
                     </FrameLayout>
 
 
@@ -240,7 +248,8 @@
                             android:background="#88868484"
                             android:text="@string/han4"
                             android:textAlignment="center"
-                            android:textColor="#ffffff" />
+                            android:textColor="#ffffff"
+                            android:id="@+id/main_han4"/>
                     </FrameLayout>
 
 

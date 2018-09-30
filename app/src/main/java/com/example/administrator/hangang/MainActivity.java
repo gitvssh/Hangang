@@ -5,9 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 
@@ -27,6 +29,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
@@ -37,6 +40,7 @@ import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.LoopPagerAdapter;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ActivityCompat.OnRequestPermissionsResultCallback{
@@ -44,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     final int[] GAMDONG={6,7,8,9,10,11};
     final int[] ZAYEON={12,13,14,15,16};
 
+    int language = 1;//언어설정값 1:한국어, 2:영어, 3:일본어, 4:중국어1, 5:중국어2
+    int correctionfactor=0;
     //메인화면 프로그램 버튼들
     private ImageButton siwon,gamdong,zayeon;
     private FrameLayout today1,today2,today3,today4;
@@ -114,6 +120,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
 
                 intent.putExtra("index",SIWON);
+                intent.putExtra("lan",language);
                 startActivity(intent);
             }
         });
@@ -127,6 +134,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
 
                 intent.putExtra("index",GAMDONG);
+                intent.putExtra("lan",language);
                 startActivity(intent);
             }
         });
@@ -140,6 +148,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
 
                 intent.putExtra("index",ZAYEON);
+                intent.putExtra("lan",language);
                 startActivity(intent);
             }
         });
@@ -150,8 +159,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),ProgramActivity.class);
-
-                intent.putExtra("index",16);
+                switch(language){
+                    case 1:
+                        correctionfactor=0;
+                        break;
+                    case 2:
+                        correctionfactor=16;
+                        break;
+                    case 3:
+                        correctionfactor=32;
+                        break;
+                    case 4:
+                        correctionfactor=48;
+                        break;
+                    case 5:
+                        correctionfactor=64;
+                        break;
+                }
+                intent.putExtra("index",16+correctionfactor);
                 startActivity(intent);
             }
         });
@@ -160,8 +185,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),ProgramActivity.class);
-
-                intent.putExtra("index",1);
+                switch(language){
+                    case 1:
+                        correctionfactor=0;
+                        break;
+                    case 2:
+                        correctionfactor=16;
+                        break;
+                    case 3:
+                        correctionfactor=32;
+                        break;
+                    case 4:
+                        correctionfactor=48;
+                        break;
+                    case 5:
+                        correctionfactor=64;
+                        break;
+                }
+                intent.putExtra("index",1+correctionfactor);
                 startActivity(intent);
             }
         });
@@ -170,8 +211,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),ProgramActivity.class);
-
-                intent.putExtra("index",9);
+                switch(language){
+                    case 1:
+                        correctionfactor=0;
+                        break;
+                    case 2:
+                        correctionfactor=16;
+                        break;
+                    case 3:
+                        correctionfactor=32;
+                        break;
+                    case 4:
+                        correctionfactor=48;
+                        break;
+                    case 5:
+                        correctionfactor=64;
+                        break;
+                }
+                intent.putExtra("index",9+correctionfactor);
                 startActivity(intent);
             }
         });
@@ -180,8 +237,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),ProgramActivity.class);
-
-                intent.putExtra("index",15);
+                switch(language){
+                    case 1:
+                        correctionfactor=0;
+                        break;
+                    case 2:
+                        correctionfactor=16;
+                        break;
+                    case 3:
+                        correctionfactor=32;
+                        break;
+                    case 4:
+                        correctionfactor=48;
+                        break;
+                    case 5:
+                        correctionfactor=64;
+                        break;
+                }
+                intent.putExtra("index",15+correctionfactor);
                 startActivity(intent);
             }
         });
@@ -292,7 +365,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }else if (id == R.id.navi_theme){
 
-            Intent intent=new Intent(MainActivity.this,ProgramActivity.class);
+            Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
+
+            intent.putExtra("index",SIWON);
+            intent.putExtra("lan",language);
             startActivity(intent);
             drawerLayout.closeDrawer(GravityCompat.START);
 
@@ -304,8 +380,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }
         else if (id == R.id.navi_reserv){
-
-            Intent intent=new Intent(MainActivity.this,PrepareActivity.class);
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("http://hangang.seoul.go.kr/project2018/reservation"));
             startActivity(intent);
             drawerLayout.closeDrawer(GravityCompat.START);
 
@@ -321,8 +397,264 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
              startActivity(intent);
              drawerLayout.closeDrawer(GravityCompat.START);
 
+    }else if(id==R.id.navi_korean){//1
+        if(language==1){
+            return false;
         }
+        language=1;
 
+            TextView main_notice=findViewById(R.id.main_notice);
+            main_notice.setText(R.string.notice);
+
+            TextView main_btn1=findViewById(R.id.main_btn1);
+            main_btn1.setText(R.string.btn1);
+
+            TextView main_btn2=findViewById(R.id.main_btn2);
+            main_btn2.setText(R.string.btn2);
+
+            TextView main_btn3=findViewById(R.id.main_btn3);
+            main_btn3.setText(R.string.btn3);
+
+            TextView main_today=findViewById(R.id.main_today);
+            main_today.setText(R.string.today);
+
+            TextView main_han1=findViewById(R.id.main_han1);
+            main_han1.setText(R.string.han1);
+
+            TextView main_han2=findViewById(R.id.main_han2);
+            main_han2.setText(R.string.han2);
+
+            TextView main_han3=findViewById(R.id.main_han3);
+            main_han3.setText(R.string.han3);
+
+            TextView main_han4=findViewById(R.id.main_han4);
+            main_han4.setText(R.string.han4);
+
+            /*TextView navi_menu1=findViewById(R.id.navi_menu1);
+            navi_menu1.setText(R.string.navi_menu1);
+
+            TextView navi_home=findViewById(R.id.navi_home);
+            navi_home.setText(R.string.navi_home);
+
+            TextView navi_hangang=findViewById(R.id.navi_hangang);
+            navi_hangang.setText(R.string.navi_hangang);
+
+            TextView navi_direct=findViewById(R.id.navi_direct);
+            navi_direct.setText(R.string.navi_direct);
+
+            TextView navi_menu2=findViewById(R.id.navi_menu2);
+            navi_menu2.setText(R.string.navi_menu2);
+
+            TextView navi_theme=findViewById(R.id.navi_theme);
+            navi_theme.setText(R.string.navi_theme);
+
+            TextView navi_date=findViewById(R.id.navi_date);
+            navi_date.setText(R.string.navi_date);
+
+            TextView navi_reserv=findViewById(R.id.navi_reserv);
+            navi_reserv.setText(R.string.navi_reserv);
+
+            TextView navi_menu3=findViewById(R.id.navi_menu3);
+            navi_menu3.setText(R.string.navi_menu3);
+
+            TextView navi_notice=findViewById(R.id.navi_notice);
+            navi_notice.setText(R.string.navi_notice);
+
+            TextView navi_cvs=findViewById(R.id.navi_cvs);
+            navi_cvs.setText(R.string.navi_cvs);
+
+            TextView prg_label_date=findViewById(R.id.prg_label_date);
+            prg_label_date.setText(R.string.prg_label_date);
+
+            TextView prg_label_place=findViewById(R.id.prg_label_place);
+            prg_label_place.setText(R.string.prg_label_place);
+
+            TextView prg_label_participate=findViewById(R.id.prg_label_participate);
+            prg_label_participate.setText(R.string.prg_label_participate);
+
+            TextView prg_label_fee=findViewById(R.id.prg_label_fee);
+            prg_label_fee.setText(R.string.prg_label_fee);*/
+
+
+        }else if(id==R.id.navi_english){//2
+            if(language==2){
+                return false;
+            }
+
+            language=2;
+
+            TextView main_notice=findViewById(R.id.main_notice);
+            main_notice.setText(R.string.notice_2);
+
+            TextView main_btn1=findViewById(R.id.main_btn1);
+            main_btn1.setText(R.string.btn1_2);
+
+            TextView main_btn2=findViewById(R.id.main_btn2);
+            main_btn2.setText(R.string.btn2_2);
+
+            TextView main_btn3=findViewById(R.id.main_btn3);
+            main_btn3.setText(R.string.btn3_2);
+
+            TextView main_today=findViewById(R.id.main_today);
+            main_today.setText(R.string.today_2);
+
+            TextView main_han1=findViewById(R.id.main_han1);
+            main_han1.setText(R.string.han1_2);
+
+            TextView main_han2=findViewById(R.id.main_han2);
+            main_han2.setText(R.string.han2_2);
+
+            TextView main_han3=findViewById(R.id.main_han3);
+            main_han3.setText(R.string.han3_2);
+
+            TextView main_han4=findViewById(R.id.main_han4);
+            main_han4.setText(R.string.han4_2);
+/*
+            TextView navi_menu1=findViewById(R.id.navi_menu1);
+            navi_menu1.setText(R.string.navi_menu1_2);
+
+            TextView navi_home=findViewById(R.id.navi_home);
+            navi_home.setText(R.string.navi_home_2);
+
+            TextView navi_hangang=findViewById(R.id.navi_hangang);
+            navi_hangang.setText(R.string.navi_hangang_2);
+
+            TextView navi_direct=findViewById(R.id.navi_direct);
+            navi_direct.setText(R.string.navi_direct_2);
+
+            TextView navi_menu2=findViewById(R.id.navi_menu2);
+            navi_menu2.setText(R.string.navi_menu2_2);
+
+            TextView navi_theme=findViewById(R.id.navi_theme);
+            navi_theme.setText(R.string.navi_theme_2);
+
+            TextView navi_date=findViewById(R.id.navi_date);
+            navi_date.setText(R.string.navi_date_2);
+
+            TextView navi_reserv=findViewById(R.id.navi_reserv);
+            navi_reserv.setText(R.string.navi_reserv_2);
+
+            TextView navi_menu3=findViewById(R.id.navi_menu3);
+            navi_menu3.setText(R.string.navi_menu3_2);
+
+            TextView navi_notice=findViewById(R.id.navi_notice);
+            navi_notice.setText(R.string.navi_notice_2);
+
+            TextView navi_cvs=findViewById(R.id.navi_cvs);
+            navi_cvs.setText(R.string.navi_cvs_2);
+
+            TextView prg_label_date=findViewById(R.id.prg_label_date);
+            prg_label_date.setText(R.string.prg_label_date_2);
+
+            TextView prg_label_place=findViewById(R.id.prg_label_place);
+            prg_label_place.setText(R.string.prg_label_place_2);
+
+            TextView prg_label_participate=findViewById(R.id.prg_label_participate);
+            prg_label_participate.setText(R.string.prg_label_participate_2);
+
+            TextView prg_label_fee=findViewById(R.id.prg_label_fee);
+            prg_label_fee.setText(R.string.prg_label_fee_2);*/
+
+    }else if(id==R.id.navi_japanese){//3
+
+            if(language==3){
+                return false;
+            }
+            language=3;
+
+            TextView main_notice=findViewById(R.id.main_notice);
+            main_notice.setText(R.string.notice_3);
+
+            TextView main_btn1=findViewById(R.id.main_btn1);
+            main_btn1.setText(R.string.btn1_3);
+
+            TextView main_btn2=findViewById(R.id.main_btn2);
+            main_btn2.setText(R.string.btn2_3);
+
+            TextView main_btn3=findViewById(R.id.main_btn3);
+            main_btn3.setText(R.string.btn3_3);
+
+            TextView main_today=findViewById(R.id.main_today);
+            main_today.setText(R.string.today_3);
+
+            TextView main_han1=findViewById(R.id.main_han1);
+            main_han1.setText(R.string.han1_3);
+
+            TextView main_han2=findViewById(R.id.main_han2);
+            main_han2.setText(R.string.han2_3);
+
+            TextView main_han3=findViewById(R.id.main_han3);
+            main_han3.setText(R.string.han3_3);
+
+            TextView main_han4=findViewById(R.id.main_han4);
+            main_han4.setText(R.string.han4_3);
+    }else if(id==R.id.navi_chinese){//4
+
+            if(language==4){
+                return false;
+            }
+            language=4;
+
+            TextView main_notice=findViewById(R.id.main_notice);
+            main_notice.setText(R.string.notice_4);
+
+            TextView main_btn1=findViewById(R.id.main_btn1);
+            main_btn1.setText(R.string.btn1_4);
+
+            TextView main_btn2=findViewById(R.id.main_btn2);
+            main_btn2.setText(R.string.btn2_4);
+
+            TextView main_btn3=findViewById(R.id.main_btn3);
+            main_btn3.setText(R.string.btn3_4);
+
+            TextView main_today=findViewById(R.id.main_today);
+            main_today.setText(R.string.today_4);
+
+            TextView main_han1=findViewById(R.id.main_han1);
+            main_han1.setText(R.string.han1_4);
+
+            TextView main_han2=findViewById(R.id.main_han2);
+            main_han2.setText(R.string.han2_4);
+
+            TextView main_han3=findViewById(R.id.main_han3);
+            main_han3.setText(R.string.han3_4);
+
+            TextView main_han4=findViewById(R.id.main_han4);
+            main_han4.setText(R.string.han4_4);
+    }else if(id==R.id.navi_chinese2){//5
+
+            if(language==5){
+                return false;
+            }
+            language=5;
+
+            TextView main_notice=findViewById(R.id.main_notice);
+            main_notice.setText(R.string.notice_5);
+
+            TextView main_btn1=findViewById(R.id.main_btn1);
+            main_btn1.setText(R.string.btn1_5);
+
+            TextView main_btn2=findViewById(R.id.main_btn2);
+            main_btn2.setText(R.string.btn2_5);
+
+            TextView main_btn3=findViewById(R.id.main_btn3);
+            main_btn3.setText(R.string.btn3_5);
+
+            TextView main_today=findViewById(R.id.main_today);
+            main_today.setText(R.string.today_5);
+
+            TextView main_han1=findViewById(R.id.main_han1);
+            main_han1.setText(R.string.han1_5);
+
+            TextView main_han2=findViewById(R.id.main_han2);
+            main_han2.setText(R.string.han2_5);
+
+            TextView main_han3=findViewById(R.id.main_han3);
+            main_han3.setText(R.string.han3_5);
+
+            TextView main_han4=findViewById(R.id.main_han4);
+            main_han4.setText(R.string.han4_5);
+    }
 
         return false;
     }
@@ -377,4 +709,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             // permissions this app might request
         }
     }
+
 }
